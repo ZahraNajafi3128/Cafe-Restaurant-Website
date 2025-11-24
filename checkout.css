@@ -223,9 +223,6 @@ body::before {
     margin-left: 10px;
     color: #fff;
 }
-
-
-/* Media Queries for Responsiveness */
 @media (max-width: 900px) {
     .checkout-container {
         flex-direction: column; 
