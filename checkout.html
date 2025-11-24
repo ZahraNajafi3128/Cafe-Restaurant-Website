@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه پرداخت</title>
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-wrapper"> 
+        <h1 class="page-title">تکمیل فرآیند پرداخت</h1>
+
+        <div class="checkout-container glass-card">
+            <div class="checkout-form-panel">
+                <div class="section-header">
+                    <h2>اطلاعات تحویل</h2>
+                </div>
+                <form class="checkout-form">
+                    <div class="form-group">
+                        <label for="name">نام و نام خانوادگی *</label>
+                        <input type="text" id="name" placeholder="مثال: علی محمدی" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">شماره تماس *</label>
+                        <input type="tel" id="phone" placeholder="مثال: 09123456789" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">آدرس ایمیل</label>
+                        <input type="email" id="email" placeholder="مثال: your@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">آدرس کامل *</label>
+                        <textarea id="address" rows="3" placeholder="استان، شهر، خیابان، کوچه، پلاک و کد پستی" required></textarea>
+                    </div>
+
+                    <div class="section-header payment-header">
+                        <h2>جزئیات پرداخت</h2>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">شماره کارت *</label>
+                        <input type="text" id="card-number" placeholder="XXXX-XXXX-XXXX-XXXX" required pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" title="فرمت صحیح: 1234-5678-9012-3456">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group expiration-date">
+                            <label for="exp-date">تاریخ انقضا (ماه/سال) *</label>
+                            <input type="text" id="exp-date" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}" title="فرمت صحیح: MM/YY">
+                        </div>
+                        <div class="form-group cvv">
+                            <label for="cvv">CVV2 *</label>
+                            <input type="text" id="cvv" placeholder="XXX" required pattern="[0-9]{3,4}" title="3 یا 4 رقم">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-holder">نام صاحب کارت *</label>
+                        <input type="text" id="card-holder" placeholder="نام روی کارت" required>
+                    </div>
+
+                    <button type="submit" class="pay-button">پرداخت و تکمیل سفارش</button>
+                </form>
+            </div>
+
+            <div class="order-summary-panel">
+                <div class="summary-content">
+                    <h3>خلاصه سفارش</h3>
+                    <div class="order-item">
+                        <span>محصول ۱</span>
+                        <span>۲۰۰,۰۰۰ تومان</span>
+                    </div>
+                    <div class="order-item">
+                        <span>محصول ۲</span>
+                        <span>۱۵۰,۰۰۰ تومان</span>
+                    </div>
+                    <div class="order-item shipping">
+                        <span>هزینه ارسال</span>
+                        <span>۳۰,۰۰۰ تومان</span>
+                    </div>
+                    <div class="order-total">
+                        <strong>مبلغ قابل پرداخت:</strong>
+                        <strong>۳۸۰,۰۰۰ تومان</strong>
+                    </div>
+                </div>
+                
+                <div class="contact-info-footer">
+                    <h4>نیاز به کمک دارید؟</h4>
+                    <p><i class="fas fa-phone-alt"></i> 021-36909583</p>
+                    <p><i class="fas fa-envelope"></i> zh718386@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

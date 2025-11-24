@@ -1,0 +1,282 @@
+body {
+    direction: rtl; 
+    font-family: 'Tahoma', 'Vazirmatn', sans-serif;
+    
+    /* تنظیمات تصویر پس‌زمینه: عدم تکرار و پوشش کامل */
+    background-image: url('image2.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    background-color: #1e1612; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    
+    color: #f5f5dc;
+    position: relative; 
+    z-index: 1;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 22, 18, 0.5); 
+    z-index: -1; 
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.page-title {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #556B2F;
+    padding-bottom: 10px;
+}
+
+.blog-layout {
+    width: 100%; 
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    
+    /* جلوه Glassmorphism */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    color: #fff;
+    
+    display: flex;
+    flex-direction: row-reverse; /* ستون اصلی در سمت راست */
+    gap: 30px;
+}
+
+/* --- استایل‌های بخش اصلی (Main Content) --- */
+
+.main-content {
+    flex: 3; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.post-card {
+    background: rgba(0, 0, 0, 0.3); 
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+
+.post-card:hover {
+    background: rgba(42, 31, 24, 0.5); 
+}
+
+.post-image {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.post-content {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+.category-tag {
+    background-color: #556B2F;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.post-date {
+    color: #ffddb2;
+}
+
+.post-title a {
+    font-size: 1.5em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.post-title a:hover {
+    color: #B6CEB4;
+}
+
+.post-excerpt {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.read-more {
+    color: #ffddb2;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #ffddb2;
+    padding-bottom: 2px;
+    align-self: flex-start;
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.read-more:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+
+/* --- استایل‌های نوار کناری (Sidebar) --- */
+
+.sidebar-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: rgba(150, 167, 141, 0.4); 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar-widget h3 {
+    font-size: 1.4em;
+    border-bottom: 2px solid #556B2F;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-widget li {
+    margin-bottom: 10px;
+}
+
+.sidebar-widget a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95em;
+    opacity: 0.9;
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.sidebar-widget a:hover {
+    opacity: 1;
+    color: #ffddb2;
+}
+
+.search-input {
+    width: 100%; 
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px; 
+    color: #ffddb2; 
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+
+/* --- Media Queries --- */
+
+@media (max-width: 900px) {
+    .blog-layout {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .sidebar-panel {
+        order: -1; /* نوار کناری در موبایل به بالا می‌رود */
+        padding: 15px;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .main-content {
+        gap: 20px;
+    }
+    
+    .post-card {
+        flex-direction: column; /* کارت‌ها در موبایل عمودی می‌شوند */
+    }
+
+    .post-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .post-content {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .post-title a {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-wrapper {
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 5px;
+    }
+
+    .post-excerpt {
+        font-size: 0.9em;
+    }
+}

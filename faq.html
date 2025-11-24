@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوالات متداول</title>
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-wrapper"> 
+        <h1 class="page-title">سوالات متداول</h1>
+
+        <div class="faq-container glass-card">
+            
+            <div class="faq-list">
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>ساعات کاری کافه رستوران اوسیس چگونه است؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ما هر روز هفته از ساعت ۱۰ صبح تا ۱۲ شب پذیرای شما هستیم. برای رزرو میز در ساعات اوج شلوغی، توصیه می‌شود از قبل تماس بگیرید.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>آیا امکان رزرو میز برای برگزاری جشن تولد وجود دارد؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بله، کافه رستوران اوسیس فضایی دلنشین برای برگزاری جشن‌های کوچک و صمیمانه دارد. لطفاً جهت هماهنگی دکوراسیون، منو و ساعت رزرو، حداقل یک هفته قبل با مدیریت تماس بگیرید.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>منوی رستوران شامل چه نوع غذاهایی است؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>منوی اوسیس عمدتاً شامل غذاهای اصیل و متنوع مدیترانه‌ای، همراه با انواع سالادها، پیش‌غذاها، نوشیدنی‌های گرم و سرد و دسرهای خاص می‌باشد.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>آدرس دقیق شما کجاست و چگونه می‌توانم به شما مراجعه کنم؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>آدرس ما: تهران، خيابان پيروزي نرسیده به چهارراه كوكاكولا، مركز خريد كوه نور، طبقه ١، واحد F116. برای مسیریابی دقیق‌تر می‌توانید از نقشه‌های آنلاین استفاده کنید.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>آیا پارکینگ اختصاصی در دسترس مشتریان قرار دارد؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>بله، مرکز خرید کوه نور دارای پارکینگ اختصاصی است که مشتریان می‌توانند از آن استفاده نمایند.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="faq-footer">
+                <p>سؤال دیگری دارید؟ لطفاً با ما <a href="contact.html">تماس بگیرید.</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = button.querySelector('.fa-chevron-down');
+
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').style.maxHeight = null;
+                        item.querySelector('.fa-chevron-down').classList.remove('rotate');
+                    }
+                });
+                faqItem.classList.toggle('active');
+                icon.classList.toggle('rotate');
+
+                if (faqItem.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

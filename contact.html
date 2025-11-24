@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="main-wrapper"> 
+        
+        <div class="contact-info-panel">
+            <h3>اطلاعات تماس</h3>
+            <p>در صورت نیاز به مشاوره یا پشتیبانی با ما تماس بگیرید.</p>
+            
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="text-content">
+                    <h4>آدرس ما</h4>
+                    <span>تهران، خيابان پيروزي نرسیده به چهارراه كوكاكولا مركز خريد كوه نور طبقه ١ واحد F116</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div class="text-content">
+                    <h4>ایمیل پشتیبانی</h4>
+                    <span>zh718386@gmail.com</span>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div class="text-content">
+                    <h4>شماره تماس</h4>
+                    <span>021-36909583</span>
+                </div>
+            </div>
+
+            <hr class="info-separator">
+
+            <h4>نقشه</h4>
+            <div class="map-placeholder">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d810.1186065381356!2d51.359436732549256!3d35.689941154388464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDQxJzI0LjAiTiA1McKwMjEnMzYuMCJF!5e0!3m2!1sen!2sus!4v1763905695466!5m2!1sen!2sus" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div class="social-icons">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-telegram-plane"></i>
+                <i class="fab fa-linkedin-in"></i> 
+            </div>
+        </div>
+
+        <div class="contact-form-panel">
+            <div class="header">
+                <h2>تماس با ما</h2>
+                <p>برای ما پیام بفرستید، ما اینجا هستیم تا کمک کنیم.</p>
+            </div>
+            
+            <form class="contact-form">
+                
+                <label for="name">نام کامل *</label>
+                <input type="text" id="name" placeholder="نام و نام خانوادگی" required>
+                
+                <label for="phone">شماره تماس</label>
+                <input type="text" id="phone" placeholder="0912XXXXXXX">
+
+                <label for="email">آدرس ایمیل *</label>
+                <input type="email" id="email" placeholder="email@example.com" required>
+
+                <label for="comment">متن پیام *</label>
+                <textarea id="comment" rows="6" placeholder="پیام خود را در اینجا وارد کنید..." required></textarea>
+                
+                <button type="submit" class="submit-button">ارسال پیام</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

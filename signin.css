@@ -1,0 +1,201 @@
+body {
+    direction: rtl; 
+    font-family: 'Tahoma', 'Vazirmatn', sans-serif;
+    background-image: url('image2.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    background-color: #1e1612; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; 
+    
+    color: #f5f5dc;
+    position: relative; 
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 22, 18, 0.5); 
+    z-index: -1; 
+}
+body::after {
+    content: none;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    padding: 35px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    
+    width: 400px; 
+    max-width: 90%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; 
+}
+
+.header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+    padding-bottom: 15px;
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.header h2 {
+    font-size: 1.8em; 
+    color: #fff; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 600; 
+    margin: 0; 
+}
+
+.login-form {
+    width: 100%; 
+}
+
+.login-form label {
+    display: block; 
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    color: #fff; 
+    font-weight: normal; 
+}
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%; 
+    padding: 12px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.2); 
+    border: 1px solid #96A78D;
+    border-radius: 4px;
+    color: #ffddb2;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.input-with-icon {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%; 
+} 
+
+.input-with-icon input {
+    width: 100%;
+    padding-left: 40px; 
+    padding-right: 15px; 
+    margin-bottom: 0;
+}
+
+.input-with-icon .fas {
+    position: absolute;
+    right: auto; 
+    left: 15px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #96A78D; 
+    cursor: pointer;
+    z-index: 10; 
+}
+
+.login-button {
+    width: 100%;
+    background-color: #556B2F; 
+    color: white;
+    padding: 15px;
+    border: 1px solid #556B2F;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 600; 
+    margin-top: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    box-sizing: border-box; 
+}
+
+.login-button:hover {
+    background-color: #3e5025; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.separator {
+    border: none; 
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    margin: 30px 0;
+    width: 100%; 
+}
+
+.no-account {
+    text-align: center;
+    color: #fff; 
+    width: 100%;
+}
+
+.no-account p {
+    color: #fff; 
+    font-size: 0.9em;
+    margin: 0 0 10px 0;
+}
+
+.create-account-link {
+    color: #c9c9c9; 
+    text-decoration: none;
+    font-weight: normal; 
+    border-bottom: 1px solid #c9c9c9;
+}
+
+.create-account-link:hover {
+    color: #fff; 
+    border-bottom-color: #fff;
+}
+.remember-me, .forgot-password, .options-row {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 25px; 
+    }
+
+    .header h2 {
+        font-size: 1.4em;
+    }
+    
+    .login-form label,
+    .no-account p {
+        font-size: 0.9em; 
+    }
+    
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        padding: 10px;
+        margin-bottom: 15px; 
+    }
+
+    .login-button {
+        padding: 13px;
+        font-size: 1.1em;
+        margin-top: 15px;
+        font-weight: 600;
+    }
+    
+    .separator {
+        margin: 25px 0;
+    }
+}
