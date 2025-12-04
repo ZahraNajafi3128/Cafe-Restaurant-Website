@@ -1,0 +1,170 @@
+/* پیام خالی بودن */
+.empty-message {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #777;
+}
+
+/* کارت لیست سفارشات، هم‌رنگ کارت پروفایل */
+.orders-card {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  padding: 20px 24px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+/* دکمه سطل آشغال بالا (پاک‌کردن همه سفارش‌ها) */
+.clear-all-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../project/images/food-delivery.png"); /* اگر آیکون سطل جدا داری اینجا بگذار */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* لیست سفارشات */
+.orders-list {
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  padding: 10px 10px 4px;
+}
+
+/* ردیف هر سفارش */
+.order-item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.order-box {
+  flex: 1;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  padding: 8px 10px;
+
+  display: flex;
+  flex-direction: row-reverse;    /* نام آیتم سمت راست، کنترل تعداد سمت چپ */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-name {
+  font-size: 0.95rem;
+  margin-right: 4px;              /* کمی فاصله از لبه راست */
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* دکمه‌های دایره‌ای مشترک */
+.qty-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+}
+
+/* حالت پیش‌فرض دایره مشکی (برای + و -) */
+.qty-circle.plus,
+.qty-circle.minus {
+  background-color: #000;
+  color: #fff;
+}
+
+/* عدد بین دکمه‌ها */
+.qty-value {
+  min-width: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* وقتی minus در حالت سطل باشد */
+.qty-circle.minus[data-icon="trash"] {
+  background-color: #fff;
+  color: #ff4b5c;
+  font-size: 0; /* متن را مخفی می‌کنیم و از ::before استفاده می‌کنیم */
+}
+
+/* آیکون سطل؛ مسیر را به آیکون خودت عوض کن */
+.qty-circle.minus[data-icon="trash"]::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-image: url("../project/images/paste.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* خلاصه مبالغ */
+.orders-summary {
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.summary-separator {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+.summary-total span:last-child {
+  font-weight: 700;
+}
+
+/* دکمه پرداخت */
+.pay-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background-color: #657fd6;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+
+.pay-btn:disabled {
+  background-color: #b5bfdc;
+  cursor: default;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>پنل کاربری - پروفایل</title>
+  <link rel="stylesheet" href="profilePage.css" />
+</head>
+<body>
+  <div class="panel-wrapper">
+
+    <!-- هدر موبایل + دکمه همبرگری -->
+    <header class="mobile-header">
+      <button id="menuToggle" class="hamburger" aria-label="باز کردن منو">☰</button>
+    </header>
+
+    <!-- منوی ثابت (سمت چپ) -->
+    <aside class="side-menu" id="sideMenu">
+      <h2 class="cafe-name">OASIS</h2>
+
+      <div class="avatar-wrapper">
+        <label for="avatar-input" class="avatar-circle">
+          <!-- عکس دیفالت پروفایل (از پوشه image) -->
+          <img id="avatarPreview"
+               class="avatar-image"
+               src="../project/images/resturant.jpg"
+               alt="عکس پروفایل" />
+        </label>
+        <input type="file" id="avatar-input" accept="image/*" hidden />
+      </div>
+
+      <p class="greeting">سلام سونیا!</p>
+
+      <nav class="side-nav">
+        <a href="profilePage.html" class="nav-link nav-link--profile active">
+          <span class="nav-text">پروفایل</span>
+        </a>
+
+        <a href="menu.html" class="nav-link nav-link--menu">
+          <span class="nav-text">مشاهده منو</span>
+        </a>
+
+        <a href="orderListPage.html" class="nav-link nav-link--orders">
+          <span class="nav-text">لیست سفارشات</span>
+        </a>
+
+        <a href="feedbackPage.html" class="nav-link nav-link--feedback">
+          <span class="nav-text">انتقاد / پیشنهاد</span>
+        </a>
+
+        <a href="reservePage.html" class="nav-link nav-link--reserve">
+          <span class="nav-text">رزرو مراسم</span>
+        </a>
+
+        <a href="logout.html" class="nav-link nav-link--logout">
+          <span class="nav-text">خروج</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- محتوای صفحه (سمت راست) -->
+    <main class="panel-content">
+      <h1 class="section-title">پروفایل کاربری</h1>
+
+      <!-- کارت اطلاعات کاربر (نمایش + ویرایش) -->
+      <section class="contact-card">
+        <header class="contact-card__header">
+          <h2 class="contact-card__title">اطلاعات کاربر</h2>
+          <button class="contact-card__edit-btn"
+                  id="contactEditBtn"
+                  aria-label="ویرایش اطلاعات کاربر">
+            ✏️
+          </button>
+        </header>
+
+        <!-- حالت نمایش -->
+        <div class="contact-card__view" id="contactView">
+          <div class="contact-row">
+            <span class="contact-row__label">نام و نام خانوادگی</span>
+            <span class="contact-row__value" data-field="fullName">-</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__label">ایمیل</span>
+            <span class="contact-row__value" data-field="email">example@gmail.com</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__label">موبایل</span>
+            <span class="contact-row__value" data-field="mobile">0912xxxxxxx</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__label">تلفن منزل</span>
+            <span class="contact-row__value" data-field="homePhone">-</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__label">استان</span>
+            <span class="contact-row__value" data-field="province">تهران</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__label">شهر</span>
+            <span class="contact-row__value" data-field="city">تهران</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__label">آدرس منزل</span>
+            <span class="contact-row__value" data-field="address">-</span>
+          </div>
+        </div>
+
+        <!-- حالت ویرایش -->
+        <form class="contact-card__edit" id="contactEditForm">
+          <div class="contact-row contact-row--edit">
+            <label class="contact-row__label">نام و نام خانوادگی</label>
+            <input type="text" class="contact-row__input" name="fullName" />
+          </div>
+          <div class="contact-row contact-row--edit">
+            <label class="contact-row__label">ایمیل</label>
+            <input type="email" class="contact-row__input" name="email" />
+          </div>
+          <div class="contact-row contact-row--edit">
+            <label class="contact-row__label">موبایل</label>
+            <input type="tel" class="contact-row__input" name="mobile" />
+          </div>
+          <div class="contact-row contact-row--edit">
+            <label class="contact-row__label">تلفن منزل</label>
+            <input type="tel" class="contact-row__input" name="homePhone" />
+          </div>
+          <div class="contact-row contact-row--edit">
+            <label class="contact-row__label">استان</label>
+            <input type="text" class="contact-row__input" name="province" />
+          </div>
+          <div class="contact-row contact-row--edit">
+            <label class="contact-row__label">شهر</label>
+            <input type="text" class="contact-row__input" name="city" />
+          </div>
+          <div class="contact-row contact-row--edit">
+            <label class="contact-row__label">آدرس منزل</label>
+            <input type="text" class="contact-row__input" name="address" />
+          </div>
+
+          <div class="contact-card__actions">
+            <button type="button" class="btn-secondary" id="contactCancelBtn">انصراف</button>
+            <button type="submit" class="btn-primary">ثبت تغییرات</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- پس‌زمینه تیره برای منوی موبایل -->
+    <div class="backdrop" id="backdrop"></div>
+  </div>
+
+  <script src="profilePage.js"></script>
+</body>
+</html>

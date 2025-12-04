@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+/* بک‌گراند تمام‌صفحه با عکس + لایه تیره */
+body {
+  direction: rtl;
+  min-height: 100vh;
+
+  /* این آدرس را با مسیر عکس رستوران/کافه خودت عوض کن */
+  background-image: url('../project/images/image2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  position: relative;
+  color: #e5e7eb;
+}
+
+/* لایه‌ی تیره روی عکس */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 22, 18, 0.5); /* شدت تاریکی؛ اگر می‌خواهی روشن‌تر شود مقدار را کمتر کن */
+  z-index: 0;
+}
+
+/* کانتینر اصلی صفحه – ساختار قبلی، فقط روی لایه قرار می‌گیرد */
+.jobs-wrapper {
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* هدر بالا */
+.jobs-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.jobs-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #f9fafb;
+}
+
+.jobs-subtitle {
+  font-size: 0.95rem;
+  color: #c6c6c6;
+}
+
+/* گرید کارت‌ها (دسکتاپ) */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* کارت هر فرصت شغلی – شیشه‌ای مثل کارت ثبت‌نام */
+.job-card {
+  background: rgba(255, 255, 255, 0.195);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 18px;
+  border: 1px solid rgba(184, 183, 183, 0.45);
+
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.55);
+  padding: 24px 24px;
+  min-height: 120px;
+
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.7);
+}
+
+/* محتوا داخل کارت */
+.job-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.job-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+/* تگ واحد / شعبه – هماهنگ با تم تیره */
+.job-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+
+  background-color: #556b2fec;
+  color: #e5e7eb;
+
+  white-space: nowrap;
+}
+
+/* ریسپانسیو: موبایل یک ستونی */
+@media (max-width: 800px) {
+  .jobs-wrapper {
+    margin: 24px auto 40px;
+    padding: 0 12px;
+  }
+
+  .jobs-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .job-card {
+    padding: 18px 20px;
+    min-height: 110px;
+    border-radius: 16px;
+  }
+
+  .job-main {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .job-title {
+    font-size: 0.9rem;
+  }
+
+  .job-tag {
+    font-size: 0.72rem;
+    padding: 3px 9px;
+  }
+}

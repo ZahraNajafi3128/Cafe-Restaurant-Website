@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap');
+
+/* ریست ساده */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+/* بک‌گراند مثل صفحه‌ی ورود: عکس + لایه تیره */
+body {
+  direction: rtl;
+  font-family: 'Tahoma', 'Vazirmatn', sans-serif;
+
+  background-image: url('image2.png');  /* مثل sign in */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #1e1612;
+
+  color: #f5f5dc;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* اورلی تیره روی عکس */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 22, 18, 0.5); /* همان شدت تاریکی sign in */
+  z-index: 0;
+}
+
+/* محتوای اصلی روی لایه تیره */
+.page-wrapper {
+  max-width: 900px;
+  margin: 40px auto 64px;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* توضیحات شغل – کارت شیشه‌ای */
+.job-box {
+  padding: 24px 24px;
+  margin-bottom: 32px;
+
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.7);
+
+  color: #f9fafb;
+}
+
+.job-heading {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.job-description p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+  color: #f3f4f6;
+}
+
+.job-description h2 {
+  font-size: 1rem;
+  margin: 12px 0 6px;
+  color: #e5e7eb;
+}
+
+.job-description ul {
+  padding-right: 20px;
+  margin-bottom: 8px;
+}
+
+.job-description li {
+  margin-bottom: 4px;
+}
+
+/* فرم – کارت شیشه‌ای دوم با همان تم */
+.form-box {
+  margin-top: 24px;
+  padding: 24px 24px;
+
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.7);
+}
+
+/* گرید فرم – ساختار قبلی حفظ شده */
+.form-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px 24px;
+  align-items: stretch;
+}
+
+/* ستون چپ ردیف بالا: نام و نام خانوادگی */
+.right-top {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-auto-rows: auto;
+  row-gap: 14px;
+}
+
+/* هر ردیف فیلد */
+.field-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.field-row label {
+  min-width: 100px;
+  white-space: nowrap;
+  color: #f9fafb;
+}
+
+/* استایل اینپوت‌ها شبیه sign in */
+.field-row input {
+  width: 100%;
+  padding: 10px 8px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid #96A78D;
+  color: #ffddb2;
+}
+
+/* لیبل رزومه: در دسکتاپ مخفی */
+.upload-label {
+  display: none;
+  color: #f9fafb;
+}
+
+/* آپلود رزومه – ستون راست، ردیف بالا */
+.upload-box {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
+  border-radius: 8px;
+  border: 1px solid #96A78D;
+  background: rgba(0, 0, 0, 0.25);
+  min-height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #ffddb2;
+
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.upload-box:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: #c0d0b0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+/* شماره تماس: ردیف پایین، ستون چپ */
+.field-phone {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+/* دکمه ارسال – تم سبز مثل sign in */
+.submit-btn {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  min-height: 60px;
+  border-radius: 6px;
+  border: 1px solid #556B2F;
+  background-color: #556B2F;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3e5025;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  transform: translateY(-1px);
+}
+
+/* ریسپانسیو موبایل (همان ساختار قبلی، فقط با تم جدید) */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 0 12px;
+    margin: 28px auto 40px;
+  }
+
+  .job-box {
+    padding: 18px 16px;
+  }
+
+  .form-box {
+    padding: 18px 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .right-top,
+  .field-phone,
+  .upload-label,
+  .upload-box,
+  .submit-btn {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
+
+  /* ترتیب عناصر در موبایل */
+  .right-top   { order: 1; }
+  .field-phone { order: 2; }
+  .upload-label { order: 3; }
+  .upload-box  { order: 4; }
+  .submit-btn  { order: 5; }
+
+  /* لیبل رزومه در موبایل نمایش داده شود */
+  .upload-label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .upload-box {
+    min-height: 47px;
+    font-size: 1rem;
+  }
+
+  /* لیبل بالا، اینپوت پایین برای همه فیلدها */
+  .field-row {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+
+  .field-row label {
+    justify-self: start;
+  }
+}

@@ -1,0 +1,164 @@
+/* کارت شیشه‌ای رزرو – هم‌عرض feedback-card، با ارتفاع کمتر */
+.reserve-card {
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+
+  /* عرض مثل کارت انتقاد/پیشنهاد، ارتفاع کمتر با پدینگ عمودی کم‌تر */
+  padding: 10px 24px;   /* قبلاً 20px 24px */
+  max-width: 650px;
+  width: 100%;
+}
+
+/* فرم رزرو داخل کارت */
+.reserve-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;             /* فاصله بین فیلدها کمتر از قبل */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.9rem;
+}
+
+.form-group label {
+  text-align: right;
+  font-weight: 500;
+  color: #2d3748;
+  transition: color 0.3s ease;
+}
+
+/* input های تک‌خطی (نوع مراسم، تعداد میهمانان، تاریخ، ساعت) */
+.reserve-form input[type="text"],
+.reserve-form input[type="number"],
+.reserve-form input[type="date"],
+.reserve-form input[type="time"] {
+  width: 100%;
+  padding: 6px 10px;    /* ارتفاع کمتر نسبت به نسخه قبلی */
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  font-size: 0.88rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  outline: none;
+  color: #2d3748;
+  font-family: inherit;
+}
+
+/* hover برای input ها */
+.reserve-form input[type="text"]:hover,
+.reserve-form input[type="number"]:hover,
+.reserve-form input[type="date"]:hover,
+.reserve-form input[type="time"]:hover {
+  border-color: #cbd5e0;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* focus برای input ها */
+.reserve-form input[type="text"]:focus,
+.reserve-form input[type="number"]:focus,
+.reserve-form input[type="date"]:focus,
+.reserve-form input[type="time"]:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 0 2px rgba(102, 126, 234, 0.12),
+    0 3px 10px rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+/* textarea توضیحات */
+.reserve-form textarea {
+  width: 100%;
+  padding: 6px 10px;    /* کمتر از قبل */
+  border-radius: 9px;
+  border: 2px solid #e2e8f0;
+  font-size: 0.88rem;
+  resize: vertical;
+  min-height: 60px;     /* قبلاً بزرگ‌تر بود؛ الان کمک زیادی به کاهش ارتفاع کارت می‌کند */
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  outline: none;
+  color: #2d3748;
+  font-family: inherit;
+  line-height: 1.45;
+}
+
+/* hover برای textarea */
+.reserve-form textarea:hover {
+  border-color: #cbd5e0;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* focus برای textarea */
+.reserve-form textarea:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 1);
+  box-shadow:
+    0 0 0 2px rgba(102, 126, 234, 0.12),
+    0 3px 10px rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+/* استایل placeholder ها */
+.reserve-form input::placeholder,
+.reserve-form textarea::placeholder {
+  color: #a0aec0;
+  opacity: 1;
+}
+
+/* متن راهنما زیر فرم */
+.reserve-note {
+  margin-top: 2px;       /* کمتر از قبل برای کاهش ارتفاع کلی */
+  font-size: 0.78rem;
+  color: #718096;
+  text-align: center;
+  line-height: 1.35;
+  padding: 4px 6px;      /* پدینگ کمتر */
+  background: rgba(237, 242, 247, 0.5);
+  border-radius: 6px;
+}
+
+/* دکمه ثبت؛ کمی کم‌ارتفاع‌تر ولی همچنان مدرن */
+.reserve-submit {
+  margin-top: 6px;       /* فاصله کم‌تر از فیلدها */
+  align-self: center;
+  min-width: 170px;
+  padding: 8px 22px;     /* ارتفاع کم‌تر نسبت به نسخه قبلی */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 11px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(102, 126, 234, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover دکمه */
+.reserve-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 18px rgba(102, 126, 234, 0.5);
+}
+
+/* active دکمه */
+.reserve-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.reserve-submit:hover::before {
+  width: 200px;
+  height: 200px;
+}

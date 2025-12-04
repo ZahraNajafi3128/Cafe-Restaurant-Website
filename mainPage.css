@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+  background-color: #dacdc2 ;
+  color: #333;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ==== Header ==== */
+header {
+  background-color: #82766a    ;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-icon {
+  font-size: 25px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+  z-index: 3000;
+  position: relative;
+}
+
+.menu-icon.active {
+  transform: rotate(90deg);
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  justify-self: center;
+  direction: rtl;
+}
+
+nav {
+  justify-self: end;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a i {
+  font-size: 1.3rem;   /* اندازه آیکون */
+  color: white;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover i {
+  color: #ffce54;      /* رنگ هاور */
+}
+
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #82766a;
+  color: white;
+  transition: right 0.4s ease;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.close-btn {
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  user-select: none;
+  z-index: 2500;
+}
+
+/* ==== Hero ==== */
+.hero {
+  width: 100%;
+  height: 550px;
+  background: url(../project/images/restaurant-interior.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+/* ==== بخش باشگاه مشتریان (سفارشی) ==== */
+.club-banner {
+  padding: 0 80px;
+  margin: 20px 0;
+}
+
+.club-inner {
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(90deg, #fff7c8 0%, #fefcdd 40%, #fff7c8 100%);
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  padding: 24px 28px ;
+  display: grid;
+  grid-template-columns: 530px 1fr !important;/* عکس راست - متن چپ */
+  align-items: center;
+  gap: 20px; 
+}
+
+/* متن بیاید سمت چپ (ستون 2) */
+.club-text {
+  grid-column: 2 !important;
+  text-align: right;
+  padding-left: 20px;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.club-brand {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.club-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.club-desc {
+  font-size: 0.98rem;
+  color: #6a6158;
+  margin-bottom: 18px;
+}
+
+
+.club-actions {
+  display: flex;
+  justify-content: flex-start; /* دکمه سمت چپ */
+  align-items: center;
+  direction: ltr; /* اضافه شده برای رفع مشکل RTL */
+  gap: 10px;
+}
+
+.club-actions .club-btn {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 12px 22px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all .2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.club-actions .club-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+
+/* تصویر بیاید ستون اول (سمت راست) */
+.club-visual {
+  grid-column: 1 !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10px !important;
+  transform: scale(0.7);   /* 30% smaller */
+  transform-origin: center;
+}
+
+
+/* جعبه هدیه */
+.club-gift {
+  position: absolute;
+  right: 170px;
+  bottom: 10px;
+  width: 500px !important;
+  height: auto;
+  z-index: 4;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
+}
+
+/* ==== بخش مستطیل‌ها ==== */
+.main-options {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 32px;
+  padding: 4rem 80px;
+  max-width: 100vw;
+  margin: auto;
+  align-items: stretch;
+}
+
+.option {
+  background: #e5ded7;
+  border-radius: 28px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  transition: all .25s ease;
+  padding: 3rem 2rem;
+  min-height: 200px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.option:hover {
+  box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+}
+
+.option-menu { grid-column: 1 / 2; grid-row: 1 / 2; }
+
+.option-branch {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.option-row {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+  height: 100%;
+}
+
+.option-row .option {
+  flex: 1;
+  font-size: 1.14rem;
+  padding: 2.5rem 2rem;
+  min-height: 180px;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.option::after {
+  content: "›";
+  position: absolute;
+  left: 1.8rem;
+  top: 1.8rem;
+  font-size: 1.6rem;
+  color: #bbb;
+  transition: left .3s, color .3s;
+}
+
+.option:hover::after {
+  left: 1.4rem;
+  color: #f4b400;
+}
+
+/* محتوا داخل کارت‌ها */
+.option-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  gap: 15px;
+}
+
+.option-content img {
+  width: 80px;
+  height: 80px;
+  opacity: 0.7;
+}
+
+.option-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #6a6158;
+}
+
+.option-content p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* ==== سایر بخش‌ها ==== */
+.about, footer {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.about-section {
+  padding: 60px 80px;
+  direction: rtl;
+  margin-top: 40px;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  text-align: right;
+}
+
+.about-logo {
+  width: 180px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.about-text h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #6a6158;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+.about-btn {
+  margin-top: 10px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  background-color: #ffe36a;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: .3s;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.about-btn:hover {
+  background-color: #ffd626;
+  transform: translateY(-3px);
+}
+
+/* بخش عکس */
+.about-image img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+footer {
+  background-color: #82766a ;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  text-align: right;
+}
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-icons a {
+  font-size: 1.6rem;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;    /* حذف زیرخط */
+  border: none;
+  box-shadow: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+/* اگر لینک‌ها در فوتر ::after دارند، اینجا برای آیکن‌ها خنثی می‌کنیم */
+.social-icons a::after {
+  content: none !important;
+}
+
+.social-icons a:hover {
+  color: #ffce54;           /* همان رنگ هاور لینک‌های فوتر */
+  text-decoration: none;
+}
+
+
+footer h3 { margin-bottom: 10px; color: #ffce54; }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 8px; }
+footer ul li a { text-decoration: none; color: white; transition: 0.3s; }
+footer ul li a:hover { color: #ffce54; }
+
+/* ==== ریسپانسیو ==== */
+@media (max-width: 900px) {
+
+  header {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .main-options {
+    flex-direction: column;
+    display: flex;
+    gap: 20px;
+    padding: 2rem 20px;
+  }
+
+  .option {
+    padding: 2rem 1.5rem;
+    min-height: 150px;
+  }
+
+  .option-row .option {
+    padding: 1.5rem 1.5rem;
+    min-height: 140px;
+  }
+
+  .option-content img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .option-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .option-content p {
+    font-size: 0.9rem;
+  }
+
+  .option-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* ==== ریسپانسیو باشگاه مشتریان (نسخه جدید اصلاح شده) ==== */
+
+  .club-banner {
+    padding: 0 20px;
+    margin: 0 0 40px 0;
+  }
+
+  .club-inner {
+    display: flex !important;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 220px;
+    text-align: center;
+  }
+
+  /* تصویرها بالا */
+  .club-visual {
+    order: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+  }
+
+  /* متن پایین */
+  .club-text {
+    order: 2;
+    text-align: right !important;
+    padding: 0;
+  }
+
+  /* تصاویر فیکس برای موبایل */
+  .club-cup,
+  .club-gift {
+    position: relative;
+    width: 55%;
+    max-width: 220px;
+    bottom: 0;
+    right: 0;
+    margin: 0 10px;
+    transform: none;
+  }
+
+    .club-actions {
+    justify-content: center; /* دکمه وسط می‌رود */
+    direction: ltr;          /* برای اطمینان */
+  }
+
+  .about-section {
+    padding: 30px 20px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  /* .about-logo {
+    margin: auto;
+  } */
+
+  .about-image img {
+    width: 80%;
+    margin: auto;
+  }
+}

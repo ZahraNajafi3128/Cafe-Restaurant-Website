@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+/* بدنه با بک‌گراند مثل صفحه لاگین */
+body {
+  direction: rtl;
+  font-family: 'Tahoma', 'Vazirmatn', sans-serif;
+
+  background-image: url('image2.png'); /* همان تصویر صفحه لاگین */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #1e1612;
+
+  color: #f5f5dc;
+  min-height: 100vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;   /* به‌جای وسط عمودی، از بالا شروع شود */
+  padding: 40px 0;
+  position: relative;
+
+  overflow-y: auto;          /* متن طولانی بتواند اسکرول شود */
+}
+
+/* اورلی تیره روی بک‌گراند */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 22, 18, 0.5); /* همان شدت تاریکی لاگین */
+  z-index: 0;
+}
+
+/* کارت شیشه‌ای قوانین */
+.terms-wrapper {
+  max-width: 900px;
+  width: 95%;
+  padding: 28px 24px;
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.7);
+
+  position: relative;
+  z-index: 1;
+  color: #f9fafb;
+}
+
+/* تیتر اصلی */
+.terms-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.terms-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+/* متن شرایط */
+.terms-content {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  text-align: justify;
+  color: #f3f4f6;
+}
+
+.terms-content .intro {
+  margin-bottom: 20px;
+}
+
+.terms-content h2 {
+  font-size: 1.05rem;
+  margin: 18px 0 6px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.terms-content p {
+  margin-bottom: 8px;
+}
+
+/* ریسپانسیو موبایل */
+@media (max-width: 768px) {
+  body {
+    padding: 24px 0;
+  }
+
+  .terms-wrapper {
+    max-width: 100%;
+    width: 94%;
+    padding: 20px 16px;
+    margin: 0 8px;
+  }
+
+  .terms-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .terms-content {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+}

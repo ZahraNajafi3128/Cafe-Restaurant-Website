@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>پنل کاربری - لیست سفارشات</title>
+
+  <!-- استایل مشترک (منو و شیشه‌ای و ...) -->
+  <link rel="stylesheet" href="profilePage.css" />
+  <!-- استایل اختصاصی کارت سفارشات -->
+  <link rel="stylesheet" href="orderListPage.css" />
+</head>
+<body>
+  <div class="panel-wrapper">
+
+    <!-- هدر موبایل + دکمه همبرگری -->
+    <header class="mobile-header">
+      <button id="menuToggle" class="hamburger" aria-label="باز کردن منو">☰</button>
+    </header>
+
+    <!-- منوی ثابت (سمت چپ) دقیقا مثل پروفایل -->
+    <aside class="side-menu" id="sideMenu">
+      <h2 class="cafe-name">OASIS</h2>
+
+      <div class="avatar-wrapper">
+        <label for="avatar-input" class="avatar-circle">
+          <img id="avatarPreview"
+               class="avatar-image"
+               src="../project/images/resturant.jpg"
+               alt="عکس پروفایل" />
+        </label>
+        <input type="file" id="avatar-input" accept="image/*" hidden />
+      </div>
+
+      <p class="greeting">سلام سونیا!</p>
+
+      <nav class="side-nav">
+        <a href="profilePage.html" class="nav-link nav-link--profile">
+          <span class="nav-text">پروفایل</span>
+        </a>
+
+        <a href="menu.html" class="nav-link nav-link--menu">
+          <span class="nav-text">مشاهده منو</span>
+        </a>
+
+        <a href="orderListPage.html" class="nav-link nav-link--orders active">
+          <span class="nav-text">لیست سفارشات</span>
+        </a>
+
+        <a href="feedbackPage.html" class="nav-link nav-link--feedback">
+          <span class="nav-text">انتقاد / پیشنهاد</span>
+        </a>
+
+        <a href="reservePage.html" class="nav-link nav-link--reserve">
+          <span class="nav-text">رزرو مراسم</span>
+        </a>
+
+        <a href="logout.html" class="nav-link nav-link--logout">
+          <span class="nav-text">خروج</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- محتوای راست -->
+    <main class="panel-content">
+      <h1 class="section-title">لیست سفارشات</h1>
+
+      <!-- پیام خالی بودن -->
+      <p id="emptyMessage" class="empty-message" hidden>لیست سفارش خالی است.</p>
+
+      <!-- کارت فاکتور -->
+      <section id="ordersSection" class="orders-card">
+        <header class="orders-header">
+          <span class="orders-header-title">سفارشات</span>
+          <button id="clearAllBtn"
+                  class="clear-all-btn"
+                  type="button"
+                  aria-label="حذف تمام سفارشات">
+          </button>
+        </header>
+
+        <div id="ordersList" class="orders-list">
+          <!-- نمونه سفارش ۱ -->
+          <div class="order-item" data-id="1" data-price="400000">
+            <div class="order-box">
+              <div class="qty-control">
+                <button class="qty-circle minus" aria-label="کاهش / حذف"></button>
+                <span class="qty-value">1</span>
+                <button class="qty-circle plus" aria-label="افزایش">+</button>
+              </div>
+              <div class="order-name">جوجه</div>
+            </div>
+          </div>
+
+          <!-- نمونه سفارش ۲ -->
+          <div class="order-item" data-id="2" data-price="400000">
+            <div class="order-box">
+              <div class="qty-control">
+                <button class="qty-circle minus" aria-label="کاهش / حذف"></button>
+                <span class="qty-value">1</span>
+                <button class="qty-circle plus" aria-label="افزایش">+</button>
+              </div>
+              <div class="order-name">قهوه</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- خلاصه مبالغ -->
+        <div class="orders-summary">
+          <div class="summary-row">
+            <span>مبلغ فاکتور:</span>
+            <span id="subtotalAmount">800000 تومان</span>
+          </div>
+          <div class="summary-row">
+            <span>ارزش افزوده:</span>
+            <span id="vatAmount">20000 تومان</span>
+          </div>
+          <div class="summary-row">
+            <span>هزینه‌ی ارسال:</span>
+            <span id="shippingAmount">100000 تومان</span>
+          </div>
+
+          <hr class="summary-separator" />
+
+          <div class="summary-row summary-total">
+            <span>جمع کل پرداختی:</span>
+            <span id="grandTotal">920000 تومان</span>
+          </div>
+        </div>
+
+        <button id="payButton" class="pay-btn">پرداخت</button>
+      </section>
+    </main>
+
+    <!-- بک‌دراپ برای موبایل -->
+    <div class="backdrop" id="backdrop"></div>
+  </div>
+
+  <script src="orderListPage.js"></script>
+</body>
+</html>
