@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap');
 
+
 * {
   margin: 0;
   padding: 0;
@@ -8,15 +9,24 @@
 }
 
 body {
-  background-color: #dacdc2 ;
-  color: #333;
+  color: #f2ebd8;
   line-height: 1.7;
   overflow-x: hidden;
+  background: url("../Cafe-Restaurant-Website/images/image2.png") center/cover fixed no-repeat;
+  position: relative;
 }
 
-/* ==== Header ==== */
+.glass-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(106, 110, 93, 0.55); /* تونالیته سبز-خاکستری شبیه سکشن تماس */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: -1;
+}
+
 header {
-  background-color: #82766a    ;
+  background-color: #213937;
   color: white;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -27,6 +37,7 @@ header {
   z-index: 1000;
 }
 
+
 .menu-icon {
   font-size: 25px;
   cursor: pointer;
@@ -36,9 +47,11 @@ header {
   position: relative;
 }
 
+
 .menu-icon.active {
   transform: rotate(90deg);
 }
+
 
 .logo {
   font-size: 1.3rem;
@@ -47,9 +60,11 @@ header {
   direction: rtl;
 }
 
+
 nav {
   justify-self: end;
 }
+
 
 nav ul {
   display: flex;
@@ -57,34 +72,36 @@ nav ul {
   list-style: none;
 }
 
+
 nav ul li a i {
-  font-size: 1.3rem;   /* اندازه آیکون */
+  font-size: 1.3rem;
   color: white;
   transition: color 0.3s;
 }
 
+
 nav ul li a:hover i {
-  color: #ffce54;      /* رنگ هاور */
+  color: rgba(150, 167, 141, 0.4);
 }
 
-
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
   right: -250px;
   width: 250px;
   height: 100%;
-  background-color: #82766a;
+  background-color: #213937;
   color: white;
   transition: right 0.4s ease;
   padding: 20px;
   z-index: 2000;
 }
 
+
 .sidebar.open {
   right: 0;
 }
+
 
 .sidebar ul {
   list-style: none;
@@ -92,14 +109,17 @@ nav ul li a:hover i {
   margin-top: 60px;
 }
 
+
 .sidebar ul li {
   margin: 15px 0;
 }
+
 
 .sidebar ul li a {
   color: white;
   text-decoration: none;
 }
+
 
 .close-btn {
   font-size: 25px;
@@ -112,15 +132,12 @@ nav ul li a:hover i {
   z-index: 2500;
 }
 
-/* ==== Hero ==== */
 .hero {
   width: 100%;
   height: 550px;
-  background: url(../project/images/restaurant-interior.jpg) center center no-repeat;
-  background-size: cover;
+  background: url("../Cafe-Restaurant-Website/images/top-view-colorful-hummus.jpg") center center / cover no-repeat;
 }
 
-/* ==== بخش باشگاه مشتریان (سفارشی) ==== */
 .club-banner {
   padding: 0 80px;
   margin: 20px 0;
@@ -129,17 +146,16 @@ nav ul li a:hover i {
 .club-inner {
   width: 100%;
   max-width: 100%;
-  background: linear-gradient(90deg, #fff7c8 0%, #fefcdd 40%, #fff7c8 100%);
+  background: rgba(150, 167, 141, 0.4);
   border-radius: 18px;
   box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-  padding: 24px 28px ;
+  padding: 24px 28px;
   display: grid;
-  grid-template-columns: 530px 1fr !important;/* عکس راست - متن چپ */
+  grid-template-columns: 530px 1fr !important;
   align-items: center;
-  gap: 20px; 
+  gap: 20px;
 }
 
-/* متن بیاید سمت چپ (ستون 2) */
 .club-text {
   grid-column: 2 !important;
   text-align: right;
@@ -152,33 +168,34 @@ nav ul li a:hover i {
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #222;
+  color: #f2ebd8;
 }
 
 .club-title {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #111;
+  color: #ffffff;
 }
 
 .club-desc {
   font-size: 0.98rem;
-  color: #6a6158;
+  color: #ffffff;
   margin-bottom: 18px;
 }
 
-
 .club-actions {
   display: flex;
-  justify-content: flex-start; /* دکمه سمت چپ */
+  justify-content: flex-start;
   align-items: center;
-  direction: ltr; /* اضافه شده برای رفع مشکل RTL */
+  direction: ltr;
   gap: 10px;
 }
 
 .club-actions .club-btn {
-  background: transparent;
+  background: #213937;
+  color: #ffffff;              
+  border: none;
   border: 1px solid rgba(0,0,0,0.12);
   padding: 12px 22px;
   border-radius: 28px;
@@ -193,32 +210,26 @@ nav ul li a:hover i {
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-
-/* تصویر بیاید ستون اول (سمت راست) */
 .club-visual {
   grid-column: 1 !important;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 10px !important;
-  transform: scale(0.7);   /* 30% smaller */
-  transform-origin: center;
+
+  transform: none !important;
 }
 
-
-/* جعبه هدیه */
 .club-gift {
-  position: absolute;
-  right: 170px;
-  bottom: 10px;
-  width: 500px !important;
+  position: absolute !important;
+  width: 330px !important;      
   height: auto;
+  right: 100px !important;      
+  bottom: -37px !important;     
   z-index: 4;
   filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
 }
 
-/* ==== بخش مستطیل‌ها ==== */
 .main-options {
   display: grid;
   grid-template-columns: 1.5fr 1.5fr;
@@ -230,8 +241,9 @@ nav ul li a:hover i {
   align-items: stretch;
 }
 
+
 .option {
-  background: #e5ded7;
+  background: rgba(150, 167, 141, 0.4);
   border-radius: 28px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   font-size: 1.35rem;
@@ -249,12 +261,15 @@ nav ul li a:hover i {
   box-sizing: border-box;
 }
 
+
 .option:hover {
   box-shadow: 0 15px 45px rgba(0,0,0,0.2);
   transform: translateY(-4px);
 }
 
+
 .option-menu { grid-column: 1 / 2; grid-row: 1 / 2; }
+
 
 .option-branch {
   grid-column: 2 / 3;
@@ -263,6 +278,7 @@ nav ul li a:hover i {
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 
 .option-row {
   grid-column: 1 / 2;
@@ -273,6 +289,7 @@ nav ul li a:hover i {
   height: 100%;
 }
 
+
 .option-row .option {
   flex: 1;
   font-size: 1.14rem;
@@ -281,6 +298,7 @@ nav ul li a:hover i {
   height: 100%;
   align-items: flex-start;
 }
+
 
 .option::after {
   content: "›";
@@ -292,12 +310,13 @@ nav ul li a:hover i {
   transition: left .3s, color .3s;
 }
 
+
 .option:hover::after {
   left: 1.4rem;
-  color: #f4b400;
+  color: #556B2F;
 }
 
-/* محتوا داخل کارت‌ها */
+
 .option-content {
   display: flex;
   flex-direction: column;
@@ -309,36 +328,40 @@ nav ul li a:hover i {
   gap: 15px;
 }
 
+
 .option-content img {
   width: 80px;
   height: 80px;
   opacity: 0.7;
 }
 
+
 .option-content h3 {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #6a6158;
+  color: #f2ebd8;
 }
+
 
 .option-content p {
   font-size: 1rem;
   font-weight: 400;
-  color: #555;
+  color: #ffffff;
   line-height: 1.8;
 }
 
-/* ==== سایر بخش‌ها ==== */
 .about, footer {
   padding: 40px 20px;
   text-align: center;
 }
+
 
 .about-section {
   padding: 60px 80px;
   direction: rtl;
   margin-top: 40px;
 }
+
 
 .about-container {
   display: grid;
@@ -347,36 +370,35 @@ nav ul li a:hover i {
   gap: 40px;
 }
 
+
 .about-text {
   text-align: right;
 }
 
-.about-logo {
-  width: 180px;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
 
 .about-text h2 {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #6a6158;
+  color: #f2ebd8;
 }
+
 
 .about-text p {
   font-size: 1rem;
-  color: #444;
+  color: #ffffff;
   line-height: 2;
   margin-bottom: 15px;
 }
+
 
 .about-btn {
   margin-top: 10px;
   padding: 12px 26px;
   border-radius: 30px;
   border: none;
-  background-color: #ffe36a;
+  background-color: #213937;
+   color: #ffffff;
   font-size: 1rem;
   cursor: pointer;
   transition: .3s;
@@ -384,12 +406,13 @@ nav ul li a:hover i {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
+
 .about-btn:hover {
-  background-color: #ffd626;
+  background-color: rgba(150, 167, 141, 0.4);
   transform: translateY(-3px);
 }
 
-/* بخش عکس */
+
 .about-image img {
   width: 100%;
   border-radius: 14px;
@@ -397,18 +420,28 @@ nav ul li a:hover i {
 }
 
 footer {
-  background-color: #82766a ;
+  background-color: #213937;
   color: white;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   text-align: right;
 }
+
+
+footer h3 { margin-bottom: 10px; color: #b1b1b0; }
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 8px; }
+footer ul li a { text-decoration: none; color: white; transition: 0.3s; }
+footer ul li a:hover { color: rgba(150, 167, 141, 0.4); }
+
+
 .social-icons {
   display: flex;
   gap: 12px;
   margin-top: 8px;
 }
+
 
 .social-icons a {
   font-size: 1.6rem;
@@ -416,33 +449,24 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;    /* حذف زیرخط */
+  text-decoration: none;
   border: none;
   box-shadow: none;
   position: relative;
   transition: color 0.3s;
 }
 
-/* اگر لینک‌ها در فوتر ::after دارند، اینجا برای آیکن‌ها خنثی می‌کنیم */
+
 .social-icons a::after {
   content: none !important;
 }
 
+
 .social-icons a:hover {
-  color: #ffce54;           /* همان رنگ هاور لینک‌های فوتر */
-  text-decoration: none;
+  color: rgba(150, 167, 141, 0.4);
 }
 
-
-footer h3 { margin-bottom: 10px; color: #ffce54; }
-footer ul { list-style: none; }
-footer ul li { margin-bottom: 8px; }
-footer ul li a { text-decoration: none; color: white; transition: 0.3s; }
-footer ul li a:hover { color: #ffce54; }
-
-/* ==== ریسپانسیو ==== */
 @media (max-width: 900px) {
-
   header {
     grid-template-columns: auto 1fr auto;
   }
@@ -492,8 +516,6 @@ footer ul li a:hover { color: #ffce54; }
     background-position: center;
   }
 
-  /* ==== ریسپانسیو باشگاه مشتریان (نسخه جدید اصلاح شده) ==== */
-
   .club-banner {
     padding: 0 20px;
     margin: 0 0 40px 0;
@@ -507,38 +529,35 @@ footer ul li a:hover { color: #ffce54; }
     text-align: center;
   }
 
-  /* تصویرها بالا */
   .club-visual {
     order: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: auto;
+    transform: none !important; 
   }
 
-  /* متن پایین */
+  .club-gift {
+    position: relative !important;
+    width: 55%;
+    max-width: 220px;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 0 auto;
+  }
+
   .club-text {
     order: 2;
     text-align: right !important;
     padding: 0;
   }
 
-  /* تصاویر فیکس برای موبایل */
-  .club-cup,
-  .club-gift {
-    position: relative;
-    width: 55%;
-    max-width: 220px;
-    bottom: 0;
-    right: 0;
-    margin: 0 10px;
-    transform: none;
+  .club-actions {
+    justify-content: center;
+    direction: ltr;
   }
 
-    .club-actions {
-    justify-content: center; /* دکمه وسط می‌رود */
-    direction: ltr;          /* برای اطمینان */
+
+  .club-actions {
+    justify-content: center;
+    direction: ltr;
   }
 
   .about-section {
@@ -553,10 +572,6 @@ footer ul li a:hover { color: #ffce54; }
   .about-text {
     text-align: center;
   }
-
-  /* .about-logo {
-    margin: auto;
-  } */
 
   .about-image img {
     width: 80%;

@@ -1,4 +1,3 @@
-// ===== منوی کناری (Sidebar) =====
 const sidebar = document.getElementById("sidebar");
 const menuIcon = document.querySelector(".menu-icon");
 const closeBtn = document.getElementById("closeBtn");
@@ -20,22 +19,16 @@ document.addEventListener("click", (e) => {
     sidebar.classList.remove("open");
   }
 });
-
-// ===== دکمه‌های ناوبری (باشگاه مشتریان و وبلاگ) =====
 const clubBtn  = document.getElementById("clubBtn");
 const aboutBtn = document.querySelector(".about-btn");
-
-// ورود به باشگاه مشتریان
 if (clubBtn) {
   clubBtn.addEventListener("click", () => {
-    window.location.href = "login.html";   // مسیر صفحه پنل کاربری / باشگاه
+    window.location.href = "login.html";  
   });
 }
-
-// مشاهده وبلاگ
 if (aboutBtn) {
   aboutBtn.addEventListener("click", () => {
-    window.location.href = "blog.html";         // مسیر صفحه وبلاگ
+    window.location.href = "blog.html";        
   });
 }
 

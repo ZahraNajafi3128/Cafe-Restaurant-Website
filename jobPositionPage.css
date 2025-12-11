@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 
   /* این آدرس را با مسیر عکس رستوران/کافه خودت عوض کن */
-  background-image: url('../project/images/image2.png');
+  background-image: url('../Cafe-Restaurant-Website/images/image2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
