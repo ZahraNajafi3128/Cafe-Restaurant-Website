@@ -2,31 +2,43 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>پنل کاربری - انتقاد / پیشنهاد</title>
 
-  <!-- استایل مشترک (منو، آواتار، کارت شیشه‌ای و ...) -->
+  <!-- تم مشترک پروفایل (بک‌گراند، سایدبار، هدر و ...) -->
   <link rel="stylesheet" href="profilePage.css" />
   <!-- استایل اختصاصی فرم انتقاد / پیشنهاد -->
   <link rel="stylesheet" href="feedbackPage.css" />
+
+  <!-- اگر در پروفایل Font Awesome داری، اینجا هم بگذار -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
+  <!-- اگر در profilePage.css از .glass-overlay استفاده می‌کنی -->
+  <div class="glass-overlay"></div>
+
   <div class="panel-wrapper">
 
-    <!-- هدر موبایل + دکمه همبرگری -->
+    <!-- هدر + دکمه همبرگری -->
     <header class="mobile-header">
       <button id="menuToggle" class="hamburger" aria-label="باز کردن منو">☰</button>
     </header>
 
-    <!-- منوی مستطیلی چپ: دقیقا کپی از صفحه پروفایل -->
+    <!-- سایدبار دقیقا مثل پروفایل -->
     <aside class="side-menu" id="sideMenu">
       <h2 class="cafe-name">OASIS</h2>
 
       <div class="avatar-wrapper">
         <label for="avatar-input" class="avatar-circle">
-          <img id="avatarPreview"
-               class="avatar-image"
-               src="../project/images/resturant.jpg"
-               alt="عکس پروفایل" />
+          <img
+            id="avatarPreview"
+            class="avatar-image"
+            src="../Cafe-Restaurant-Website/images/pro-user.png"
+            alt="عکس پروفایل"
+          />
         </label>
         <input type="file" id="avatar-input" accept="image/*" hidden />
       </div>
@@ -34,27 +46,33 @@
       <p class="greeting">سلام سونیا!</p>
 
       <nav class="side-nav">
-        <a href="profilePage.html" class="nav-link nav-link--profile">
+        <a href="profilePage.html" class="nav-link">
+          <i class="fas fa-user"></i>
           <span class="nav-text">پروفایل</span>
         </a>
 
-        <a href="menu.html" class="nav-link nav-link--menu">
+        <a href="menuPage.html" class="nav-link">
+          <i class="fas fa-utensils"></i>
           <span class="nav-text">مشاهده منو</span>
         </a>
 
-        <a href="orderListPage.html" class="nav-link nav-link--orders">
+        <a href="orderListPage.html" class="nav-link">
+          <i class="fas fa-clipboard-list"></i>
           <span class="nav-text">لیست سفارشات</span>
         </a>
 
-        <a href="feedbackPage.html" class="nav-link nav-link--feedback active">
+        <a href="feedbackPage.html" class="nav-link active">
+          <i class="fas fa-comment-dots"></i>
           <span class="nav-text">انتقاد / پیشنهاد</span>
         </a>
 
-        <a href="reservePage.html" class="nav-link nav-link--reserve">
+        <a href="reservePage.html" class="nav-link">
+          <i class="fas fa-calendar-check"></i>
           <span class="nav-text">رزرو مراسم</span>
         </a>
 
-        <a href="logout.html" class="nav-link nav-link--logout">
+        <a href="mainPage.html" class="nav-link">
+          <i class="fas fa-right-from-bracket"></i>
           <span class="nav-text">خروج</span>
         </a>
       </nav>
@@ -69,14 +87,18 @@
         <form id="feedbackForm" class="feedback-form">
           <div class="form-group">
             <label for="message">متن انتقاد / پیشنهاد</label>
-            <textarea id="message"
-                      name="message"
-                      rows="6"
-                      placeholder="متن خود را اینجا وارد کنید"></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="متن خود را اینجا وارد کنید">
+            </textarea>
           </div>
 
           <div class="form-group">
-            <label for="imageInput">اگر تصویری دارید که می‌خواهید پیوست کنید، آن را انتخاب کنید</label>
+            <label for="imageInput">
+              اگر تصویری دارید که می‌خواهید پیوست کنید، آن را انتخاب کنید
+            </label>
             <input type="file" id="imageInput" name="image" accept="image/*" />
           </div>
 
@@ -85,7 +107,7 @@
       </section>
     </main>
 
-    <!-- بک‌دراپ برای موبایل -->
+    <!-- بک‌دراپ برای منو -->
     <div class="backdrop" id="backdrop"></div>
   </div>
 

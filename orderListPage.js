@@ -133,7 +133,7 @@
 
     if (payButton) {
       payButton.addEventListener('click', () => {
-        alert('پرداخت با موفقیت انجام شد (نمونه).');
+        window.location.href = 'checkout.html';
       });
     }
 

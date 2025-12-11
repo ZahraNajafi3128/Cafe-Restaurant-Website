@@ -1,4 +1,4 @@
-// همبرگری: باز و بسته کردن منوی کناری در موبایل
+// همبرگری: باز و بسته کردن منوی کناری
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu   = document.getElementById('sideMenu');
 const backdrop   = document.getElementById('backdrop');
@@ -33,10 +33,9 @@ if (avatarInput && avatarPreview) {
 }
 
 // ----- فرم انتقاد / پیشنهاد -----
-
-const feedbackForm  = document.getElementById('feedbackForm');
-const messageInput  = document.getElementById('message');
-const imageInput    = document.getElementById('imageInput');
+const feedbackForm = document.getElementById('feedbackForm');
+const messageInput = document.getElementById('message');
+const imageInput   = document.getElementById('imageInput');
 
 if (feedbackForm) {
   feedbackForm.addEventListener('submit', (e) => {
@@ -48,7 +47,7 @@ if (feedbackForm) {
       return;
     }
 
-    // اینجا می‌توانی ارسال به سرور (AJAX / Fetch) را اضافه کنی
+    // اینجا می‌توانی ارسال به سرور را اضافه کنی (Fetch/AJAX)
     alert('انتقاد / پیشنهاد شما ثبت شد. متشکریم!');
 
     feedbackForm.reset();
