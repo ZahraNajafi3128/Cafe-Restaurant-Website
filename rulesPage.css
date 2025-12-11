@@ -7,12 +7,11 @@
   font-family: 'Vazirmatn', sans-serif;
 }
 
-/* بدنه با بک‌گراند مثل صفحه لاگین */
 body {
   direction: rtl;
   font-family: 'Tahoma', 'Vazirmatn', sans-serif;
 
-  background-image: url('image2.png'); /* همان تصویر صفحه لاگین */
+  background-image: url('image2.png'); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -25,23 +24,21 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;   /* به‌جای وسط عمودی، از بالا شروع شود */
+  align-items: flex-start;  
   padding: 40px 0;
   position: relative;
 
-  overflow-y: auto;          /* متن طولانی بتواند اسکرول شود */
+  overflow-y: auto;        
 }
 
-/* اورلی تیره روی بک‌گراند */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-color: rgba(30, 22, 18, 0.5); /* همان شدت تاریکی لاگین */
+  background-color: rgba(30, 22, 18, 0.5); 
   z-index: 0;
 }
 
-/* کارت شیشه‌ای قوانین */
 .terms-wrapper {
   max-width: 900px;
   width: 95%;
@@ -53,14 +50,12 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.7);
-
+  box-shadow: 0 14px 35px rgba(107, 101, 92, 0.7);
   position: relative;
   z-index: 1;
   color: #f9fafb;
 }
 
-/* تیتر اصلی */
 .terms-header {
   text-align: center;
   margin-bottom: 24px;
@@ -73,7 +68,6 @@ body::before {
   text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
 
-/* متن شرایط */
 .terms-content {
   font-size: 0.95rem;
   line-height: 1.9;
@@ -96,7 +90,6 @@ body::before {
   margin-bottom: 8px;
 }
 
-/* ریسپانسیو موبایل */
 @media (max-width: 768px) {
   body {
     padding: 24px 0;
