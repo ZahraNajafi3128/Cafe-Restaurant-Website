@@ -12,18 +12,16 @@ body {
   direction: rtl;
 }
 
-/* کانتینر محتوای اصلی (به‌جز هدر) */
 .staff-wrapper {
   max-width: 1000px;
   margin: 0 auto 60px;
 }
 
-/* هدر با بک‌گراند عکس دسته‌جمعی – تمام عرض صفحه */
 .hero {
   position: relative;
   width: 100%;
   height: 400px;
-  background-image: url("../project/images/personel.jpg"); /* عکس گروهی */
+  background-image: url("../Cafe-Restaurant-Website/images/personel.jpg"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -48,7 +46,6 @@ body {
   margin: 20px 0 30px;
 }
 
-/* معرفی پرسنل */
 .staff-section {
   padding: 0 24px;
   display: flex;
@@ -56,21 +53,19 @@ body {
   gap: 200px;
 }
 
-/* هر ردیف: عکس + متن */
 .staff-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 300px;   /* فاصله‌ی بیشتر بین ستون عکس و ستون متن */
+  gap: 300px;   
 }
 
-/* باکس عکس */
 .staff-photo-box {
   flex: 2.1;
   border: 1px solid #111;
   background: #fff;
   height: 270px;
-  overflow: hidden;        /* بیرون‌زدگی عکس بریده شود */
+  overflow: hidden;       
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,10 +75,10 @@ body {
 .staff-photo-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* پر کردن کل باکس بدون کشیدگی بد */
+  object-fit: cover;       
 }
 
-/* متن کنار عکس */
+
 .staff-text {
   flex: 1;
   font-size: 0.95rem;
@@ -95,7 +90,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* ریسپانسیو موبایل */
 @media (max-width: 768px) {
 
   .hero {
@@ -106,14 +100,12 @@ body {
     padding: 0 12px;
   }
 
-  /* همه ردیف‌ها عمودی شوند */
   .staff-row {
     flex-direction: column;
     align-items: stretch;
-    gap: 24px;      /* فاصله‌ی عمودی معقول در موبایل */
+    gap: 24px;   
   }
 
-  /* برای سرآشپز: برعکس کردن ترتیب تا اول عکس، بعد متن بیاید */
   .staff-row--chef {
     flex-direction: column-reverse;
   }

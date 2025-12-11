@@ -7,12 +7,10 @@
   font-family: 'Vazirmatn', sans-serif;
 }
 
-/* بک‌گراند تمام‌صفحه با عکس + لایه تیره */
 body {
   direction: rtl;
   min-height: 100vh;
 
-  /* این آدرس را با مسیر عکس رستوران/کافه خودت عوض کن */
   background-image: url('../Cafe-Restaurant-Website/images/image2.png');
   background-size: cover;
   background-position: center;
@@ -23,16 +21,14 @@ body {
   color: #e5e7eb;
 }
 
-/* لایه‌ی تیره روی عکس */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(30, 22, 18, 0.5); /* شدت تاریکی؛ اگر می‌خواهی روشن‌تر شود مقدار را کمتر کن */
+  background: rgba(30, 22, 18, 0.5);
   z-index: 0;
 }
 
-/* کانتینر اصلی صفحه – ساختار قبلی، فقط روی لایه قرار می‌گیرد */
 .jobs-wrapper {
   max-width: 1100px;
   margin: 40px auto 60px;
@@ -41,7 +37,6 @@ body::before {
   z-index: 1;
 }
 
-/* هدر بالا */
 .jobs-header {
   text-align: center;
   margin-bottom: 32px;
@@ -59,16 +54,14 @@ body::before {
   color: #c6c6c6;
 }
 
-/* گرید کارت‌ها (دسکتاپ) */
 .jobs-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
   gap: 16px;
 }
 
-/* کارت هر فرصت شغلی – شیشه‌ای مثل کارت ثبت‌نام */
 .job-card {
-  background: rgba(255, 255, 255, 0.195);
+  background: rgba(150, 167, 141, 0.35);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
@@ -94,7 +87,6 @@ body::before {
   box-shadow: 0 20px 45px rgba(15, 23, 42, 0.7);
 }
 
-/* محتوا داخل کارت */
 .job-main {
   display: flex;
   align-items: center;
@@ -108,7 +100,6 @@ body::before {
   color: #f9fafb;
 }
 
-/* تگ واحد / شعبه – هماهنگ با تم تیره */
 .job-tag {
   display: inline-block;
   padding: 4px 12px;
@@ -121,7 +112,6 @@ body::before {
   white-space: nowrap;
 }
 
-/* ریسپانسیو: موبایل یک ستونی */
 @media (max-width: 800px) {
   .jobs-wrapper {
     margin: 24px auto 40px;
@@ -129,7 +119,7 @@ body::before {
   }
 
   .jobs-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr); 
     gap: 12px;
   }
 

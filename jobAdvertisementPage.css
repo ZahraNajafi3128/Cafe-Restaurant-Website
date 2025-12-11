@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap');
 
-/* ریست ساده */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,12 +7,11 @@
   font-family: 'Vazirmatn', sans-serif;
 }
 
-/* بک‌گراند مثل صفحه‌ی ورود: عکس + لایه تیره */
 body {
   direction: rtl;
   font-family: 'Tahoma', 'Vazirmatn', sans-serif;
 
-  background-image: url('image2.png');  /* مثل sign in */
+  background-image: url('image2.png');  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -25,7 +23,6 @@ body {
   position: relative;
 }
 
-/* اورلی تیره روی عکس */
 body::before {
   content: '';
   position: fixed;
@@ -33,11 +30,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(30, 22, 18, 0.5); /* همان شدت تاریکی sign in */
+  background-color: rgba(30, 22, 18, 0.5); 
   z-index: 0;
 }
 
-/* محتوای اصلی روی لایه تیره */
 .page-wrapper {
   max-width: 900px;
   margin: 40px auto 64px;
@@ -46,7 +42,6 @@ body::before {
   z-index: 1;
 }
 
-/* توضیحات شغل – کارت شیشه‌ای */
 .job-box {
   padding: 24px 24px;
   margin-bottom: 32px;
@@ -90,7 +85,6 @@ body::before {
   margin-bottom: 4px;
 }
 
-/* فرم – کارت شیشه‌ای دوم با همان تم */
 .form-box {
   margin-top: 24px;
   padding: 24px 24px;
@@ -103,7 +97,6 @@ body::before {
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.7);
 }
 
-/* گرید فرم – ساختار قبلی حفظ شده */
 .form-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -112,7 +105,6 @@ body::before {
   align-items: stretch;
 }
 
-/* ستون چپ ردیف بالا: نام و نام خانوادگی */
 .right-top {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
@@ -121,7 +113,6 @@ body::before {
   row-gap: 14px;
 }
 
-/* هر ردیف فیلد */
 .field-row {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -136,7 +127,6 @@ body::before {
   color: #f9fafb;
 }
 
-/* استایل اینپوت‌ها شبیه sign in */
 .field-row input {
   width: 100%;
   padding: 10px 8px;
@@ -148,13 +138,11 @@ body::before {
   color: #ffddb2;
 }
 
-/* لیبل رزومه: در دسکتاپ مخفی */
 .upload-label {
   display: none;
   color: #f9fafb;
 }
 
-/* آپلود رزومه – ستون راست، ردیف بالا */
 .upload-box {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -180,13 +168,11 @@ body::before {
   box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-/* شماره تماس: ردیف پایین، ستون چپ */
 .field-phone {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 }
 
-/* دکمه ارسال – تم سبز مثل sign in */
 .submit-btn {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
@@ -215,7 +201,6 @@ body::before {
   transform: translateY(-1px);
 }
 
-/* ریسپانسیو موبایل (همان ساختار قبلی، فقط با تم جدید) */
 @media (max-width: 768px) {
   .page-wrapper {
     padding: 0 12px;
@@ -244,14 +229,12 @@ body::before {
     grid-row: auto;
   }
 
-  /* ترتیب عناصر در موبایل */
   .right-top   { order: 1; }
   .field-phone { order: 2; }
   .upload-label { order: 3; }
   .upload-box  { order: 4; }
   .submit-btn  { order: 5; }
 
-  /* لیبل رزومه در موبایل نمایش داده شود */
   .upload-label {
     display: block;
     font-size: 0.9rem;
@@ -263,7 +246,6 @@ body::before {
     font-size: 1rem;
   }
 
-  /* لیبل بالا، اینپوت پایین برای همه فیلدها */
   .field-row {
     grid-template-columns: 1fr;
     row-gap: 4px;
