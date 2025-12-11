@@ -2,28 +2,41 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>پنل کاربری - پروفایل</title>
+
+  <!-- استایل صفحه پروفایل -->
   <link rel="stylesheet" href="profilePage.css" />
+
+  <!-- Font Awesome برای آیکون‌های منو -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
+  <!-- لایه شیشه‌ای سراسری روی بک‌گراند -->
+  <div class="glass-overlay"></div>
+
   <div class="panel-wrapper">
 
-    <!-- هدر موبایل + دکمه همبرگری -->
+    <!-- هدر + دکمه همبرگری -->
     <header class="mobile-header">
       <button id="menuToggle" class="hamburger" aria-label="باز کردن منو">☰</button>
     </header>
 
-    <!-- منوی ثابت (سمت چپ) -->
+    <!-- سایدبار off-canvas -->
     <aside class="side-menu" id="sideMenu">
       <h2 class="cafe-name">OASIS</h2>
 
       <div class="avatar-wrapper">
         <label for="avatar-input" class="avatar-circle">
-          <!-- عکس دیفالت پروفایل (از پوشه image) -->
-          <img id="avatarPreview"
-               class="avatar-image"
-               src="../project/images/resturant.jpg"
-               alt="عکس پروفایل" />
+          <img
+            id="avatarPreview"
+            class="avatar-image"
+            src="../Cafe-Restaurant-Website/images/pro-user.png"
+            alt="عکس پروفایل"
+          />
         </label>
         <input type="file" id="avatar-input" accept="image/*" hidden />
       </div>
@@ -31,43 +44,50 @@
       <p class="greeting">سلام سونیا!</p>
 
       <nav class="side-nav">
-        <a href="profilePage.html" class="nav-link nav-link--profile active">
+        <a href="profilePage.html" class="nav-link active">
+          <i class="fas fa-user"></i>
           <span class="nav-text">پروفایل</span>
         </a>
 
-        <a href="menu.html" class="nav-link nav-link--menu">
+        <a href="menu.html" class="nav-link">
+          <i class="fas fa-utensils"></i>
           <span class="nav-text">مشاهده منو</span>
         </a>
 
-        <a href="orderListPage.html" class="nav-link nav-link--orders">
+        <a href="orderListPage.html" class="nav-link">
+          <i class="fas fa-clipboard-list"></i>
           <span class="nav-text">لیست سفارشات</span>
         </a>
 
-        <a href="feedbackPage.html" class="nav-link nav-link--feedback">
+        <a href="feedbackPage.html" class="nav-link">
+          <i class="fas fa-comment-dots"></i>
           <span class="nav-text">انتقاد / پیشنهاد</span>
         </a>
 
-        <a href="reservePage.html" class="nav-link nav-link--reserve">
+        <a href="reservePage.html" class="nav-link">
+          <i class="fas fa-calendar-check"></i>
           <span class="nav-text">رزرو مراسم</span>
         </a>
 
-        <a href="logout.html" class="nav-link nav-link--logout">
+        <a href="logout.html" class="nav-link">
+          <i class="fas fa-right-from-bracket"></i>
           <span class="nav-text">خروج</span>
         </a>
       </nav>
     </aside>
 
-    <!-- محتوای صفحه (سمت راست) -->
+    <!-- محتوای صفحه -->
     <main class="panel-content">
       <h1 class="section-title">پروفایل کاربری</h1>
 
-      <!-- کارت اطلاعات کاربر (نمایش + ویرایش) -->
       <section class="contact-card">
         <header class="contact-card__header">
           <h2 class="contact-card__title">اطلاعات کاربر</h2>
-          <button class="contact-card__edit-btn"
-                  id="contactEditBtn"
-                  aria-label="ویرایش اطلاعات کاربر">
+          <button
+            class="contact-card__edit-btn"
+            id="contactEditBtn"
+            aria-label="ویرایش اطلاعات کاربر"
+          >
             ✏️
           </button>
         </header>
@@ -143,7 +163,7 @@
       </section>
     </main>
 
-    <!-- پس‌زمینه تیره برای منوی موبایل -->
+    <!-- بک‌دراپ برای منو -->
     <div class="backdrop" id="backdrop"></div>
   </div>
 

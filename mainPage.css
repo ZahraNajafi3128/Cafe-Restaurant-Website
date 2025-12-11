@@ -19,7 +19,7 @@ body {
 .glass-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(106, 110, 93, 0.55); /* تونالیته سبز-خاکستری شبیه سکشن تماس */
+  background: rgba(47, 48, 43, 0.55); /* تونالیته سبز-خاکستری شبیه سکشن تماس */
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: -1;

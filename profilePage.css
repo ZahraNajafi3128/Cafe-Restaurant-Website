@@ -8,42 +8,66 @@
   font-family: 'Vazirmatn', sans-serif;
 }
 
-/* پس‌زمینه کمی گرادیانی تا شیشه‌ای بودن کارت بهتر دیده شود */
+/* بک‌گراند ثابت */
 body {
-  background: linear-gradient(135deg, #dde3f3, #f3f3f5);
   direction: rtl;
+  font-family: 'Tahoma', 'Vazirmatn', sans-serif;
+  background: #1e1612;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: #f5f5dc;
+  position: relative;
+  z-index: 1;
 }
 
-/* ---------- لِی‌اوت کلی ---------- */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../Cafe-Restaurant-Website/images/image2.png'); /* همون تصویر لاگین */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: rgba(30, 22, 18, 0.6);
+  background-blend-mode: multiply;
+  z-index: -1;
+}
 
+
+/* لایه شیشه‌ای کلی */
+
+
+/* لِی‌اوت کلی */
 .panel-wrapper {
   width: 100%;
   max-width: 100%;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 260px minmax(0, 1fr); /* چپ منو، راست محتوا */
-  column-gap: 30px;
+  display: block;
   min-height: 100vh;
   position: relative;
 }
 
-/* ---------- هدر موبایل ---------- */
-
+/* هدر + همبرگری */
 .mobile-header {
-  display: none;
-  grid-column: 1 / -1;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 12px;
+  padding: 10px 16px;
+  color: #fff;
 }
 
 .mobile-header span {
   font-size: 1rem;
 }
-
-/* دکمه همبرگری بدون قاب */
 
 .hamburger {
   background: transparent;
@@ -52,33 +76,41 @@ body {
   padding: 0;
   font-size: 26px;
   cursor: pointer;
+  color: #fff;
 }
 
-/* ---------- منوی مستطیلی چپ ---------- */
-
+/* سایدبار off‑canvas */
 .side-menu {
-  grid-column: 1;
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
   height: 100vh;
-  background-color: #f9f9fb;
-  border: none;
+  background: rgba(150, 167, 141, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-radius: 0;
-  box-shadow: 0 0 20px rgba(0,0,0,0.18);
+  box-shadow: -4px 0 10px rgba(0,0,0,0.25);
   padding: 25px 20px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 1001;
+  color: #ffffff;
+  transition: right .3s ease;
+}
+
+.side-menu.open {
+  right: 0;
 }
 
 .cafe-name {
   font-size: 1.2rem;
   margin-bottom: 20px;
   font-family: 'Pacifico', cursive;
-  letter-spacing: 2px;      /* دلخواه: فاصله حروف برای شبیه لوگو شدن */
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
-
-/* دایره آپلود عکس */
 
 .avatar-wrapper {
   margin-bottom: 15px;
@@ -91,15 +123,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;               /* تصویر از دایره بیرون نزند */
+  overflow: hidden;
   cursor: pointer;
 }
 
-/* تصویر داخل آواتار */
 .avatar-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;              /* تصویر کل دایره را پر کند */
+  object-fit: cover;
 }
 
 .greeting {
@@ -107,7 +138,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* لینک‌های منو با آیکون پشت متن */
+/* لینک‌های منو */
 
 .side-nav {
   width: 100%;
@@ -117,75 +148,37 @@ body {
 }
 
 .nav-link {
-  position: relative;
-  display: block;
-  padding: 8px 40px 8px 0;      /* فضای سمت راست برای آیکون */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
   font-size: 0.95rem;
-  color: #000;
+  color: #ffffff;
   text-decoration: none;
-  text-align: right;
 }
 
-.nav-text {
-  position: relative;
-  z-index: 1;
+.nav-link i {
+  font-size: 1.2rem;
+  color: #ffffff;
 }
 
-/* آیکون عمومی؛ تصویر در کلاس‌های جدا مشخص می‌شود */
-.nav-link::before {
-  content: "";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  opacity: 0.7;                 /* شبیه نمونه، کمی کم‌رنگ */
+.nav-link:hover i {
+  color: #c0bcb4;
 }
 
-/* آیتم فعال */
 .nav-link.active .nav-text {
   font-weight: 700;
 }
 
-/* برای هر گزینه، آیکون خودش از پوشه image (مسیر را طبق پروژه خودت تنظیم کن) */
-.nav-link--profile::before {
-  background-image: url("../project/images/coffee.png");
-}
-
-.nav-link--menu::before {
-  background-image: url("../project/images/coffee.png");
-}
-
-.nav-link--orders::before {
-  background-image: url("../project/images/coffee.png");
-}
-
-.nav-link--feedback::before {
-  background-image: url("../project/images/drinks-menu.png");
-}
-
-.nav-link--reserve::before {
-  background-image: url("../project/images/food-delivery.png");
-}
-
-.nav-link--logout::before {
-  background-image: url("../project/images/coffee.png");
-}
-
-/* ---------- محتوای راست (تایتل + کارت) ---------- */
+/* محتوای اصلی */
 
 .panel-content {
-  grid-column: 2;
-  padding: 40px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;     /* تایتل و کارت وسط عمودی ستون */
-  min-height: 100vh;
+  justify-content: center;
+  min-height: calc(100vh - 50px);
 }
 
 .section-title {
@@ -193,20 +186,22 @@ body {
   margin-bottom: 25px;
   text-align: center;
   width: 100%;
+  color: #fffdf7;
 }
 
-/* ---------- کارت اطلاعات کاربر (شیشه‌ای) ---------- */
+/* کارت اطلاعات کاربر */
 
 .contact-card {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(150, 167, 141, 0.35);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
   padding: 20px 24px;
   max-width: 650px;
   width: 100%;
+  color: #ffffff;
 }
 
 .contact-card__header {
@@ -221,8 +216,6 @@ body {
   font-weight: 700;
 }
 
-/* دکمه آیکون ادیت */
-
 .contact-card__edit-btn {
   background: #fff8d9;
   border: 1px solid #ffe08a;
@@ -235,8 +228,6 @@ body {
   justify-content: center;
   cursor: pointer;
 }
-
-/* ردیف‌های فقط-متن */
 
 .contact-row {
   display: flex;
@@ -252,13 +243,13 @@ body {
 }
 
 .contact-row__label {
-  color: #222;
+  color: #f2f2f2;
   min-width: 140px;
   text-align: right;
 }
 
 .contact-row__value {
-  color: #111;
+  color: #ffffff;
   text-align: left;
 }
 
@@ -292,7 +283,7 @@ body {
 }
 
 .btn-primary {
-  background-color: #657fd6;
+  background-color: #556B2F;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -309,7 +300,7 @@ body {
   cursor: pointer;
 }
 
-/* ---------- بک‌دراپ موبایل ---------- */
+/* بک‌دراپ */
 
 .backdrop {
   position: fixed;
@@ -326,43 +317,20 @@ body {
   pointer-events: auto;
 }
 
-/* ---------- ریسپانسیو ---------- */
+/* اوورراید نهایی موبایل: کارت بیاد بالاتر */
 
 @media (max-width: 800px) {
-  .panel-wrapper {
-    grid-template-columns: 1fr;
-    min-height: 100vh;
-  }
-
-  .mobile-header {
-    display: flex;
-  }
-
   .panel-content {
-    grid-column: 1;
-    padding: 70px 20px 30px;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .side-menu {
-    position: fixed;
-    top: 0;
-    right: -260px;
-    width: 260px;
-    height: 100vh;
-    border-radius: 0;
-    box-shadow: -4px 0 10px rgba(0,0,0,0.25);
-    transition: right .3s ease;
-    background-color: #f9f9fb;
-    padding-top: 40px;
-  }
-
-  .side-menu.open {
-    right: 0;
+    padding-top: 10px !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+    padding-bottom: 24px !important;
+    min-height: auto !important;
+    justify-content: flex-start !important;
   }
 
   .contact-card {
-    max-width: 100%;
+    max-width: 100% !important;
+    margin-top: 10px !important;
   }
 }

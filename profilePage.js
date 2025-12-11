@@ -1,4 +1,4 @@
-// همبرگری: باز و بسته کردن منوی کناری در موبایل
+// همبرگری: باز و بسته کردن منوی کناری در همه سایزها
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu   = document.getElementById('sideMenu');
 const backdrop   = document.getElementById('backdrop');
@@ -26,7 +26,7 @@ if (avatarInput && avatarPreview) {
 
     const reader = new FileReader();
     reader.onload = (event) => {
-      avatarPreview.src = event.target.result; // جایگزینی عکس دیفالت با عکس کاربر
+      avatarPreview.src = event.target.result;
     };
     reader.readAsDataURL(file);
   });
@@ -38,7 +38,6 @@ const viewBox   = document.getElementById('contactView');
 const editForm  = document.getElementById('contactEditForm');
 const cancelBtn = document.getElementById('contactCancelBtn');
 
-// خواندن مقادیر فعلی از کارت
 function getCurrentValues() {
   return {
     fullName:  viewBox.querySelector('[data-field="fullName"]').textContent.trim(),
@@ -51,7 +50,6 @@ function getCurrentValues() {
   };
 }
 
-// پر کردن فرم از روی مقادیر فعلی
 function fillFormFromView() {
   const data = getCurrentValues();
   editForm.fullName.value  = data.fullName;
@@ -64,20 +62,17 @@ function fillFormFromView() {
 }
 
 if (editBtn && viewBox && editForm && cancelBtn) {
-  // رفتن به حالت ویرایش
   editBtn.addEventListener('click', () => {
     fillFormFromView();
     viewBox.style.display  = 'none';
     editForm.style.display = 'block';
   });
 
-  // انصراف و برگشت به حالت نمایش
   cancelBtn.addEventListener('click', () => {
     editForm.style.display = 'none';
     viewBox.style.display  = 'block';
   });
 
-  // ثبت تغییرات (سمت کلاینت؛ برای ذخیره واقعی باید به سرور بفرستی)
   editForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
