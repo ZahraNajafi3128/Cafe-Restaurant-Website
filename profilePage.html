@@ -5,27 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>پنل کاربری - پروفایل</title>
 
-  <!-- استایل صفحه پروفایل -->
   <link rel="stylesheet" href="profilePage.css" />
 
-  <!-- Font Awesome برای آیکون‌های منو -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 </head>
 <body>
-  <!-- لایه شیشه‌ای سراسری روی بک‌گراند -->
   <div class="glass-overlay"></div>
 
   <div class="panel-wrapper">
 
-    <!-- هدر + دکمه همبرگری -->
     <header class="mobile-header">
       <button id="menuToggle" class="hamburger" aria-label="باز کردن منو">☰</button>
     </header>
-
-    <!-- سایدبار off-canvas -->
     <aside class="side-menu" id="sideMenu">
       <h2 class="cafe-name">OASIS</h2>
 
@@ -49,7 +43,7 @@
           <span class="nav-text">پروفایل</span>
         </a>
 
-        <a href="menu.html" class="nav-link">
+        <a href="menuPage.html" class="nav-link">
           <i class="fas fa-utensils"></i>
           <span class="nav-text">مشاهده منو</span>
         </a>
@@ -69,14 +63,12 @@
           <span class="nav-text">رزرو مراسم</span>
         </a>
 
-        <a href="logout.html" class="nav-link">
+        <a href="mainPage.html" class="nav-link">
           <i class="fas fa-right-from-bracket"></i>
           <span class="nav-text">خروج</span>
         </a>
       </nav>
     </aside>
-
-    <!-- محتوای صفحه -->
     <main class="panel-content">
       <h1 class="section-title">پروفایل کاربری</h1>
 
@@ -91,8 +83,6 @@
             ✏️
           </button>
         </header>
-
-        <!-- حالت نمایش -->
         <div class="contact-card__view" id="contactView">
           <div class="contact-row">
             <span class="contact-row__label">نام و نام خانوادگی</span>
@@ -123,8 +113,6 @@
             <span class="contact-row__value" data-field="address">-</span>
           </div>
         </div>
-
-        <!-- حالت ویرایش -->
         <form class="contact-card__edit" id="contactEditForm">
           <div class="contact-row contact-row--edit">
             <label class="contact-row__label">نام و نام خانوادگی</label>
@@ -162,8 +150,6 @@
         </form>
       </section>
     </main>
-
-    <!-- بک‌دراپ برای منو -->
     <div class="backdrop" id="backdrop"></div>
   </div>
 

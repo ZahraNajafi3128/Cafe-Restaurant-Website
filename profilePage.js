@@ -1,4 +1,3 @@
-// همبرگری: باز و بسته کردن منوی کناری در همه سایزها
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu   = document.getElementById('sideMenu');
 const backdrop   = document.getElementById('backdrop');
@@ -15,7 +14,6 @@ if (menuToggle && sideMenu && backdrop) {
   });
 }
 
-// ----- آپلود و پیش‌نمایش عکس آواتار -----
 const avatarInput   = document.getElementById('avatar-input');
 const avatarPreview = document.getElementById('avatarPreview');
 
@@ -32,7 +30,6 @@ if (avatarInput && avatarPreview) {
   });
 }
 
-// ----- کارت اطلاعات کاربر: نمایش / ویرایش -----
 const editBtn   = document.getElementById('contactEditBtn');
 const viewBox   = document.getElementById('contactView');
 const editForm  = document.getElementById('contactEditForm');
