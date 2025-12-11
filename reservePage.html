@@ -2,31 +2,35 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>پنل کاربری - رزرو مراسم</title>
-
-  <!-- استایل مشترک (منو، آواتار، کارت شیشه‌ای و ...) -->
   <link rel="stylesheet" href="profilePage.css" />
-  <!-- استایل اختصاصی فرم رزرو -->
   <link rel="stylesheet" href="reservePage.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body>
+  <div class="glass-overlay"></div>
+
   <div class="panel-wrapper">
 
-    <!-- هدر موبایل + دکمه همبرگری -->
     <header class="mobile-header">
       <button id="menuToggle" class="hamburger" aria-label="باز کردن منو">☰</button>
     </header>
 
-    <!-- منوی مستطیلی چپ؛ دقیقا مثل بقیه صفحات -->
     <aside class="side-menu" id="sideMenu">
       <h2 class="cafe-name">OASIS</h2>
 
       <div class="avatar-wrapper">
         <label for="avatar-input" class="avatar-circle">
-          <img id="avatarPreview"
-               class="avatar-image"
-               src="../project/images/resturant.jpg"
-               alt="عکس پروفایل" />
+          <img
+            id="avatarPreview"
+            class="avatar-image"
+            src="../Cafe-Restaurant-Website/images/pro-user.png"
+            alt="عکس پروفایل"
+          />
         </label>
         <input type="file" id="avatar-input" accept="image/*" hidden />
       </div>
@@ -34,48 +38,63 @@
       <p class="greeting">سلام سونیا!</p>
 
       <nav class="side-nav">
-        <a href="profilePage.html" class="nav-link nav-link--profile">
+        <a href="profilePage.html" class="nav-link">
+          <i class="fas fa-user"></i>
           <span class="nav-text">پروفایل</span>
         </a>
 
-        <a href="menu.html" class="nav-link nav-link--menu">
+        <a href="menuPage.html" class="nav-link">
+          <i class="fas fa-utensils"></i>
           <span class="nav-text">مشاهده منو</span>
         </a>
 
-        <a href="orderListPage.html" class="nav-link nav-link--orders">
+        <a href="orderListPage.html" class="nav-link">
+          <i class="fas fa-clipboard-list"></i>
           <span class="nav-text">لیست سفارشات</span>
         </a>
 
-        <a href="feedbackPage.html" class="nav-link nav-link--feedback">
+        <a href="feedbackPage.html" class="nav-link">
+          <i class="fas fa-comment-dots"></i>
           <span class="nav-text">انتقاد / پیشنهاد</span>
         </a>
 
-        <a href="reservePage.html" class="nav-link nav-link--reserve active">
+        <a href="reservePage.html" class="nav-link active">
+          <i class="fas fa-calendar-check"></i>
           <span class="nav-text">رزرو مراسم</span>
         </a>
 
-        <a href="logout.html" class="nav-link nav-link--logout">
+        <a href="mainPage.html" class="nav-link">
+          <i class="fas fa-right-from-bracket"></i>
           <span class="nav-text">خروج</span>
         </a>
       </nav>
     </aside>
 
-    <!-- محتوای راست -->
     <main class="panel-content">
       <h1 class="section-title">رزرو مراسم</h1>
 
-      <!-- کارت فرم رزرو مراسم -->
       <section class="reserve-card">
         <form id="reserveForm" class="reserve-form">
 
           <div class="form-group">
             <label for="eventType">نوع مراسم</label>
-            <input type="text" id="eventType" name="eventType" placeholder="مثلاً تولد، سالگرد، دورهمی دوستانه" />
+            <input
+              type="text"
+              id="eventType"
+              name="eventType"
+              placeholder="مثلاً تولد، سالگرد، دورهمی دوستانه"
+            />
           </div>
 
           <div class="form-group">
             <label for="guests">تعداد میهمانان</label>
-            <input type="number" id="guests" name="guests" min="1" placeholder="مثلاً ۲۰ نفر" />
+            <input
+              type="number"
+              id="guests"
+              name="guests"
+              min="1"
+              placeholder="مثلاً ۲۰ نفر"
+            />
           </div>
 
           <div class="form-group">
@@ -90,11 +109,16 @@
 
           <div class="form-group">
             <label for="notes">توضیحات</label>
-            <textarea id="notes" name="notes" rows="4" placeholder="هر توضیح اضافی مثل نوع دکور، موسیقی، کیک و ..."></textarea>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="هر توضیح اضافی مثل نوع دکور، موسیقی، کیک و ..."></textarea>
           </div>
 
           <p class="reserve-note">
-            تکمیل این فرم به‌منزله رزرو قطعی نیست. پس از ثبت، برای هماهنگی و دریافت اطلاعات بیشتر با شما تماس می‌گیریم.
+            تکمیل این فرم به‌منزله رزرو قطعی نیست. پس از ثبت، برای هماهنگی و دریافت
+            اطلاعات بیشتر با شما تماس می‌گیریم.
           </p>
 
           <button type="submit" class="btn-primary reserve-submit">ثبت</button>
@@ -102,7 +126,6 @@
       </section>
     </main>
 
-    <!-- بک‌دراپ برای موبایل -->
     <div class="backdrop" id="backdrop"></div>
   </div>
 

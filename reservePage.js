@@ -1,4 +1,3 @@
-// همبرگری: باز و بسته کردن منوی کناری در موبایل
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu   = document.getElementById('sideMenu');
 const backdrop   = document.getElementById('backdrop');
@@ -15,7 +14,6 @@ if (menuToggle && sideMenu && backdrop) {
   });
 }
 
-// آپلود و پیش‌نمایش آواتار
 const avatarInput   = document.getElementById('avatar-input');
 const avatarPreview = document.getElementById('avatarPreview');
 
@@ -32,8 +30,6 @@ if (avatarInput && avatarPreview) {
   });
 }
 
-// ----- فرم رزرو مراسم -----
-
 const reserveForm = document.getElementById('reserveForm');
 const eventTypeEl = document.getElementById('eventType');
 const guestsEl    = document.getElementById('guests');
@@ -42,7 +38,7 @@ const timeEl      = document.getElementById('time');
 
 if (reserveForm) {
   reserveForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // جلوگیری از ارسال واقعی فرم
+    e.preventDefault(); 
 
     const eventType = eventTypeEl.value.trim();
     const guests    = guestsEl.value.trim();
@@ -54,7 +50,6 @@ if (reserveForm) {
       return;
     }
 
-    // اینجا می‌توانی ارسال اطلاعات به سرور را اضافه کنی
     alert('درخواست رزرو شما ثبت شد. به‌زودی برای هماهنگی با شما تماس خواهیم گرفت.');
 
     reserveForm.reset();
