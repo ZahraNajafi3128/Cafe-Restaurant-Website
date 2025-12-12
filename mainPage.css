@@ -19,7 +19,7 @@ body {
 .glass-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(47, 48, 43, 0.55); /* تونالیته سبز-خاکستری شبیه سکشن تماس */
+  background: rgba(47, 48, 43, 0.55); 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   z-index: -1;
@@ -135,7 +135,7 @@ nav ul li a:hover i {
 .hero {
   width: 100%;
   height: 550px;
-  background: url("../Cafe-Restaurant-Website/images/top-view-colorful-hummus.jpg") center center / cover no-repeat;
+  background: url("../Cafe-Restaurant-Website/images/banner-cofe1.jpg") center center / cover no-repeat;
 }
 
 .club-banner {
