@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منو قهوه سرد</title>
+
+  <link rel="stylesheet" href="profilePage.css" />
+  <link rel="stylesheet" href="menuPage.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div class="glass-overlay"></div>
+
+  <div class="panel-wrapper">
+
+    <header class="menu-header">
+      <button id="menuToggle" class="hamburger" aria-label="باز کردن منو">☰</button>
+
+      <nav class="category-nav">
+        <button class="category-btn active" data-category="all">
+          <span>همه</span>
+        </button>
+
+        <button class="category-btn" data-category="coldCoffe">
+          <i class="fas fa-snowflake"></i>
+          <span>قهوه سرد</span>
+        </button>
+
+        <button class="category-btn" data-category="hotCoffe">
+          <i class="fas fa-fire"></i>
+          <span>قهوه گرم</span>
+        </button>
+
+        <button class="category-btn" data-category="tea">
+          <i class="fas fa-leaf"></i>
+          <span>چای و دمنوش</span>
+        </button>
+
+        <button class="category-btn" data-category="moktel">
+          <i class="fas fa-wine-glass"></i>
+          <span>موکتل و اسموتی</span>
+        </button>
+
+        <button class="category-btn" data-category="shake">
+          <i class="fas fa-blender"></i>
+          <span>شیک و بستنی</span>
+        </button>
+
+        <button class="category-btn" data-category="drink">
+          <i class="fas fa-droplet"></i>
+          <span>نوشیدنی</span>
+        </button>
+
+        <button class="category-btn" data-category="deser">
+          <i class="fas fa-cake-candles"></i>
+          <span>دسر و کیک روز</span>
+        </button>
+
+        <button class="category-btn" data-category="berenj">
+          <i class="fas fa-bowl-rice"></i>
+          <span>غذای برنجی</span>
+        </button>
+
+        <button class="category-btn" data-category="breakFast">
+          <i class="fas fa-egg"></i>
+          <span>صبحانه</span>
+        </button>
+
+        <button class="category-btn" data-category="pishQaza">
+          <i class="fas fa-plate-wheat"></i>
+          <span>پیش غذا</span>
+        </button>
+
+        <button class="category-btn" data-category="salad">
+          <i class="fas fa-leaf"></i>
+          <span>سالاد</span>
+        </button>
+
+        <button class="category-btn" data-category="pasta">
+          <i class="fas fa-utensils"></i>
+          <span>پاستا</span>
+        </button>
+
+        <button class="category-btn" data-category="pizza">
+          <i class="fas fa-pizza-slice"></i>
+          <span>پیتزا</span>
+        </button>
+
+        <button class="category-btn" data-category="berger">
+          <i class="fas fa-hamburger"></i>
+          <span>برگر</span>
+        </button>
+      </nav>
+    </header>
+
+    <aside class="side-menu" id="sideMenu">
+      <h2 class="cafe-name">OASIS</h2>
+
+      <div class="avatar-wrapper">
+        <label for="avatar-input" class="avatar-circle">
+          <img
+            id="avatarPreview"
+            class="avatar-image"
+            src="../Cafe-Restaurant-Website/images/pro-user.png"
+            alt="عکس پروفایل"
+          />
+        </label>
+        <input type="file" id="avatar-input" accept="image/*" hidden />
+      </div>
+
+      <p class="greeting">سلام سونیا!</p>
+
+      <nav class="side-nav">
+        <a href="profilePage.html" class="nav-link">
+          <i class="fas fa-user"></i>
+          <span class="nav-text">پروفایل</span>
+        </a>
+
+        <a href="menuPage.html" class="nav-link active">
+          <i class="fas fa-utensils"></i>
+          <span class="nav-text">مشاهده منو</span>
+        </a>
+
+        <a href="orderListPage.html" class="nav-link">
+          <i class="fas fa-clipboard-list"></i>
+          <span class="nav-text">لیست سفارشات</span>
+        </a>
+
+        <a href="feedbackPage.html" class="nav-link">
+          <i class="fas fa-comment-dots"></i>
+          <span class="nav-text">انتقاد / پیشنهاد</span>
+        </a>
+
+        <a href="reservePage.html" class="nav-link">
+          <i class="fas fa-calendar-check"></i>
+          <span class="nav-text">رزرو مراسم</span>
+        </a>
+
+        <a href="mainPage.html" class="nav-link">
+          <i class="fas fa-right-from-bracket"></i>
+          <span class="nav-text">خروج</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="panel-content menu-content">
+      <section class="menu-grid">
+
+        <article class="menu-card" data-category="hotCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/espreso.jpg" alt="قهوه اسپرسو" />
+
+            <div class="qty-controls" data-item="قهوه اسپرسو" data-price="89000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">قهوه اسپرسو</h3>
+            <p class="menu-card-desc">اسپرسو تک‌شات با عطر قوی و تلخی متعادل.</p>
+            <p class="menu-card-price">89000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="hotCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/americano.jpg" alt="قهوه امریکانو" />
+
+            <div class="qty-controls" data-item="قهوه امریکانو" data-price="95000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">قهوه امریکانو</h3>
+            <p class="menu-card-desc">اسپرسو + آب داغ؛ سبک‌تر و مناسب نوشیدن طولانی.</p>
+            <p class="menu-card-price">95000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="coldCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/ice-coffe.jpg" alt="آیس قهوه انتخابی" />
+
+            <div class="qty-controls" data-item="آیس قهوه انتخابی" data-price="286000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">آیس قهوه انتخابی</h3>
+            <p class="menu-card-desc">قهوه سرد با یخ؛ مناسب روزهای گرم و طعم دلخواه.</p>
+            <p class="menu-card-price">286000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="coldCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/ice-latte.jpg" alt="آیس لاته" />
+
+            <div class="qty-controls" data-item="آیس لاته" data-price="164000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">آیس لاته</h3>
+            <p class="menu-card-desc">اسپرسو + شیر سرد + یخ؛ ملایم و خامه‌ای.</p>
+            <p class="menu-card-price">164000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="coldCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/iceAmricano.jpg" alt="آیس امریکانو" />
+
+            <div class="qty-controls" data-item="آیس امریکانو" data-price="119000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">آیس امریکانو</h3>
+            <p class="menu-card-desc">قهوه سرد سبک با طعم واضح اسپرسو.</p>
+            <p class="menu-card-price">119000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="shake">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/strawberry-shake.jpg" alt="شیک توت فرنگی" />
+
+            <div class="qty-controls" data-item="شیک توت فرنگی" data-price="155000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">شیک توت فرنگی</h3>
+            <p class="menu-card-desc">بستنی + شیر + توت‌فرنگی؛ شیرین و خنک.</p>
+            <p class="menu-card-price">155000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="tea">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/steaming-cup-matcha.jpg" alt="چای سبز" />
+
+            <div class="qty-controls" data-item="چای سبز" data-price="35000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">چای سبز</h3>
+            <p class="menu-card-desc">چای سبز دم‌کرده؛ سبک و آرام‌بخش.</p>
+            <p class="menu-card-price">35000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="hotDrink">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/hotChocolate.jpg" alt="شکلات داغ" />
+
+            <div class="qty-controls" data-item="شکلات داغ" data-price="145000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">شکلات داغ</h3>
+            <p class="menu-card-desc">شیر داغ + شکلات؛ غلیظ و شیرین.</p>
+            <p class="menu-card-price">145000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="deser">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/chocolateCake.jpg" alt="کیک شکلات" />
+
+            <div class="qty-controls" data-item="کیک شکلات" data-price="85000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">کیک شکلات</h3>
+            <p class="menu-card-desc">کیک نرم با طعم شکلاتی و بافت مرطوب.</p>
+            <p class="menu-card-price">85000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="breakFast">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/breakFast.jpg" alt="صبحانه ترکیبی" />
+
+            <div class="qty-controls" data-item="صبحانه ترکیبی" data-price="125000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">صبحانه ترکیبی</h3>
+            <p class="menu-card-desc">ترکیبی از آیتم‌های سبک صبحانه (قابل سفارشی‌سازی).</p>
+            <p class="menu-card-price">125000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="salad">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/salad.jpg" alt="سالاد سزار" />
+
+            <div class="qty-controls" data-item="سالاد سزار" data-price="185000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">سالاد سزار</h3>
+            <p class="menu-card-desc">کاهو، سس سزار، کروتان و پنیر (اختیاری).</p>
+            <p class="menu-card-price">185000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="pasta">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/pasta.jpg" alt="پاستا آلفردو" />
+
+            <div class="qty-controls" data-item="پاستا آلفردو" data-price="245000">
+              <button class="qty-btn qty-plus-only" type="button" aria-label="افزودن">+</button>
+
+              <div class="qty-expanded is-hidden" aria-hidden="true">
+                <button class="qty-btn qty-minus" type="button" aria-label="کم کردن">−</button>
+                <span class="qty-count">1</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="زیاد کردن">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">پاستا آلفردو</h3>
+            <p class="menu-card-desc">پاستا با سس خامه‌ای و طعم کلاسیک ایتالیایی.</p>
+            <p class="menu-card-price">245000 تومان</p>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <div class="backdrop" id="backdrop"></div>
+  </div>
+
+  <script src="menuPage.js"></script>
+</body>
+</html>
