@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منو</title>
+
+  <link rel="stylesheet" href="profilePage.css" />
+  <link rel="stylesheet" href="generalMenu.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+
+<body>
+  <div class="glass-overlay"></div>
+
+  <div class="panel-wrapper">
+
+    <header class="menu-header">
+      <nav class="category-nav">
+        <button class="category-btn active" data-category="all">
+          <span>همه</span>
+        </button>
+
+        <button class="category-btn" data-category="coldCoffe">
+          <i class="fas fa-snowflake"></i>
+          <span>قهوه سرد</span>
+        </button>
+
+        <button class="category-btn" data-category="hotCoffe">
+          <i class="fas fa-fire"></i>
+          <span>قهوه گرم</span>
+        </button>
+
+        <button class="category-btn" data-category="tea">
+          <i class="fas fa-leaf"></i>
+          <span>چای و دمنوش</span>
+        </button>
+
+        <button class="category-btn" data-category="moktel">
+          <i class="fas fa-wine-glass"></i>
+          <span>موکتل و اسموتی</span>
+        </button>
+
+        <button class="category-btn" data-category="shake">
+          <i class="fas fa-blender"></i>
+          <span>شیک و بستنی</span>
+        </button>
+
+        <button class="category-btn" data-category="drink">
+          <i class="fas fa-droplet"></i>
+          <span>نوشیدنی</span>
+        </button>
+
+        <button class="category-btn" data-category="deser">
+          <i class="fas fa-cake-candles"></i>
+          <span>دسر و کیک روز</span>
+        </button>
+
+        <button class="category-btn" data-category="berenj">
+          <i class="fas fa-bowl-rice"></i>
+          <span>غذای برنجی</span>
+        </button>
+
+        <button class="category-btn" data-category="breakFast">
+          <i class="fas fa-egg"></i>
+          <span>صبحانه</span>
+        </button>
+
+        <button class="category-btn" data-category="pishQaza">
+          <i class="fas fa-plate-wheat"></i>
+          <span>پیش غذا</span>
+        </button>
+
+        <button class="category-btn" data-category="salad">
+          <i class="fas fa-leaf"></i>
+          <span>سالاد</span>
+        </button>
+
+        <button class="category-btn" data-category="pasta">
+          <i class="fas fa-utensils"></i>
+          <span>پاستا</span>
+        </button>
+
+        <button class="category-btn" data-category="pizza">
+          <i class="fas fa-pizza-slice"></i>
+          <span>پیتزا</span>
+        </button>
+
+        <button class="category-btn" data-category="berger">
+          <i class="fas fa-hamburger"></i>
+          <span>برگر</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="panel-content menu-content">
+      <section class="menu-grid">
+
+        <article class="menu-card" data-category="hotCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/espreso.jpg" alt="قهوه اسپرسو" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">قهوه اسپرسو</h3>
+            <p class="menu-card-desc">اسپرسو تک‌شات با عطر قوی و تلخی متعادل.</p>
+            <p class="menu-card-price">89000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="hotCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/americano.jpg" alt="قهوه امریکانو" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">قهوه امریکانو</h3>
+            <p class="menu-card-desc">اسپرسو + آب داغ؛ سبک‌تر و مناسب نوشیدن طولانی.</p>
+            <p class="menu-card-price">95000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="coldCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/ice-coffe.jpg" alt="آیس قهوه انتخابی" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">آیس قهوه انتخابی</h3>
+            <p class="menu-card-desc">قهوه سرد با یخ؛ مناسب روزهای گرم و طعم دلخواه.</p>
+            <p class="menu-card-price">286000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="coldCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/ice-latte.jpg" alt="آیس لاته" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">آیس لاته</h3>
+            <p class="menu-card-desc">اسپرسو + شیر سرد + یخ؛ ملایم و خامه‌ای.</p>
+            <p class="menu-card-price">164000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="coldCoffe">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/iceAmricano.jpg" alt="آیس امریکانو" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">آیس امریکانو</h3>
+            <p class="menu-card-desc">قهوه سرد سبک با طعم واضح اسپرسو.</p>
+            <p class="menu-card-price">119000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="shake">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/strawberry-shake.jpg" alt="شیک توت فرنگی" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">شیک توت فرنگی</h3>
+            <p class="menu-card-desc">بستنی + شیر + توت‌فرنگی؛ شیرین و خنک.</p>
+            <p class="menu-card-price">155000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="tea">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/steaming-cup-matcha.jpg" alt="چای سبز" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">چای سبز</h3>
+            <p class="menu-card-desc">چای سبز دم‌کرده؛ سبک و آرام‌بخش.</p>
+            <p class="menu-card-price">35000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="hotDrink">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/hotChocolate.jpg" alt="شکلات داغ" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">شکلات داغ</h3>
+            <p class="menu-card-desc">شیر داغ + شکلات؛ غلیظ و شیرین.</p>
+            <p class="menu-card-price">145000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="deser">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/chocolateCake.jpg" alt="کیک شکلات" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">کیک شکلات</h3>
+            <p class="menu-card-desc">کیک نرم با طعم شکلاتی و بافت مرطوب.</p>
+            <p class="menu-card-price">85000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="breakFast">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/breakFast.jpg" alt="صبحانه ترکیبی" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">صبحانه ترکیبی</h3>
+            <p class="menu-card-desc">ترکیبی از آیتم‌های سبک صبحانه (قابل سفارشی‌سازی).</p>
+            <p class="menu-card-price">125000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="salad">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/salad.jpg" alt="سالاد سزار" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">سالاد سزار</h3>
+            <p class="menu-card-desc">کاهو، سس سزار، کروتان و پنیر (اختیاری).</p>
+            <p class="menu-card-price">185000 تومان</p>
+          </div>
+        </article>
+
+        <article class="menu-card" data-category="pasta">
+          <div class="menu-card-image">
+            <img src="../Cafe-Restaurant-Website/images/pasta.jpg" alt="پاستا آلفردو" />
+          </div>
+
+          <div class="menu-card-content">
+            <h3 class="menu-card-title">پاستا آلفردو</h3>
+            <p class="menu-card-desc">پاستا با سس خامه‌ای و طعم کلاسیک ایتالیایی.</p>
+            <p class="menu-card-price">245000 تومان</p>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <div class="backdrop" id="backdrop"></div>
+  </div>
+
+  <script src="generalMenu.js"></script>
+</body>
+</html>
