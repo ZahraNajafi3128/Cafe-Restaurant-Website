@@ -1,6 +1,5 @@
-/* کارت شیشه‌ای هم‌تم کارت پروفایل */
 .feedback-card {
-  background: rgba(150, 167, 141, 0.35);      /* مثل contact-card */
+  background: rgba(150, 167, 141, 0.35);      
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-radius: 20px;
@@ -13,7 +12,6 @@
   color: #ffffff;
 }
 
-/* فرم داخل کارت */
 .feedback-form {
   display: flex;
   flex-direction: column;
@@ -30,11 +28,10 @@
 .form-group label {
   text-align: right;
   font-weight: 500;
-  color: #ffffff;              /* هماهنگ با تم روشن روی پس‌زمینه سبز */
+  color: #ffffff;              
   transition: color 0.3s ease;
 }
 
-/* textarea متن انتقاد / پیشنهاد */
 .feedback-form textarea {
   width: 100%;
   padding: 10px 14px;
@@ -71,7 +68,6 @@
   opacity: 1;
 }
 
-/* input فایل */
 .feedback-form input[type="file"] {
   width: 100%;
   padding: 8px 12px;
@@ -98,7 +94,6 @@
     0 3px 10px rgba(0, 0, 0, 0.14);
 }
 
-/* دکمه ثبت – استایل مدرن */
 .feedback-submit {
   margin-top: 10px;
   align-self: center;
@@ -117,7 +112,6 @@
 }
 
 
-/* موبایل: کارت تمام عرض شود اگر لازم شد */
 @media (max-width: 800px) {
   .feedback-card {
     max-width: 100%;
