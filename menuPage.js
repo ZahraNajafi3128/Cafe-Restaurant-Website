@@ -30,6 +30,33 @@ if (avatarInput && avatarPreview) {
   });
 }
 
+const CART_KEY = 'oasis_cart';
+
+function loadCart() {
+  try {
+    return JSON.parse(localStorage.getItem(CART_KEY)) || {};
+  } catch {
+    return {};
+  }
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function setCartItem(name, price, qty) {
+  const cart = loadCart();
+  const q = Number(qty) || 0;
+  const p = Number(price) || 0;
+
+  if (q <= 0) {
+    delete cart[name];
+  } else {
+    cart[name] = { price: p, qty: q };
+  }
+  saveCart(cart);
+}
+
 const categoryBtns = document.querySelectorAll('.category-btn');
 const menuCards    = document.querySelectorAll('.menu-card');
 
@@ -56,21 +83,21 @@ categoryBtns.forEach(btn => {
 });
 
 const qtyWrappers = document.querySelectorAll('.qty-controls');
-
 const cartCounts = {};
 
 qtyWrappers.forEach(wrap => {
-  const plusOnly  = wrap.querySelector('.qty-plus-only');
-  const expanded  = wrap.querySelector('.qty-expanded');
-  const minusBtn  = wrap.querySelector('.qty-minus');
-  const plusBtn   = wrap.querySelector('.qty-plus');
-  const countEl   = wrap.querySelector('.qty-count');
+  const plusOnly = wrap.querySelector('.qty-plus-only');
+  const expanded = wrap.querySelector('.qty-expanded');
+  const minusBtn = wrap.querySelector('.qty-minus');
+  const plusBtn  = wrap.querySelector('.qty-plus');
+  const countEl  = wrap.querySelector('.qty-count');
 
   const itemName = wrap.getAttribute('data-item');
+  const price    = wrap.getAttribute('data-price');
 
-  let count = 0;
+  let count = loadCart()[itemName]?.qty || 0;
 
-  const render = () => {
+  const renderUI = () => {
     cartCounts[itemName] = count;
 
     if (count <= 0) {
@@ -86,26 +113,43 @@ qtyWrappers.forEach(wrap => {
     }
   };
 
+  const persist = () => {
+    setCartItem(itemName, price, count);
+  };
+
   plusOnly.addEventListener('click', (e) => {
     e.preventDefault();
     count = 1;
-    render();
+    renderUI();
+    persist();
   });
 
   plusBtn.addEventListener('click', (e) => {
     e.preventDefault();
     count += 1;
-    render();
+    renderUI();
+    persist();
   });
 
   minusBtn.addEventListener('click', (e) => {
     e.preventDefault();
     count -= 1;
-    render();
+    renderUI();
+    persist();
   });
 
-  render();
+  wrap.__syncFromCart = (cartObj) => {
+    count = cartObj[itemName]?.qty || 0;
+    renderUI();
+  };
+
+  renderUI();
 });
+
+function syncFromStorage() {
+  const cart = loadCart();
+  qtyWrappers.forEach(w => w.__syncFromCart && w.__syncFromCart(cart));
+}
 
 window.addEventListener('load', () => {
   menuCards.forEach((card, index) => {
@@ -117,4 +161,12 @@ window.addEventListener('load', () => {
       card.style.transform = 'translateY(0)';
     }, index * 50);
   });
+});
+
+syncFromStorage();
+window.addEventListener('pageshow', () => {
+  syncFromStorage();
+});
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') syncFromStorage();
 });
