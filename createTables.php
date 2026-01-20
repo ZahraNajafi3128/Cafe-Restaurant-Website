@@ -87,11 +87,8 @@ else
 $s2="CREATE TABLE feedback(
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
-  subject VARCHAR(150) NULL,
-  message TEXT NOT NULL,
-  status ENUM('new','seen','closed') NOT NULL DEFAULT 'new',
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
+  messages TEXT NOT NULL,
+  image_path VARCHAR(255) NULL,
   FOREIGN KEY (user_id) REFERENCES users(id)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
 $s3=mysqli_query($s1,$s2);

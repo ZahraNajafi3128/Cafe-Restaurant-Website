@@ -30,22 +30,16 @@ if (avatarInput && avatarPreview) {
   });
 }
 
+// فقط چک متن خالی نباشد (اختیاری)
 const feedbackForm = document.getElementById('feedbackForm');
 const messageInput = document.getElementById('message');
-const imageInput   = document.getElementById('imageInput');
 
 if (feedbackForm) {
   feedbackForm.addEventListener('submit', (e) => {
-    e.preventDefault(); 
-
-    const message = messageInput.value.trim();
-    if (!message) {
+    const msg = messageInput.value.trim();
+    if (!msg) {
+      e.preventDefault();
       alert('لطفاً متن انتقاد / پیشنهاد را وارد کنید.');
-      return;
     }
-
-    alert('انتقاد / پیشنهاد شما ثبت شد. متشکریم!');
-
-    feedbackForm.reset();
   });
 }

@@ -1,5 +1,15 @@
+/* جلوگیری از اینکه لایه شیشه‌ای جلوی کلیک را بگیرد */
+.glass-overlay{
+  pointer-events: none;
+}
+
+.panel-wrapper{
+  position: relative;
+  z-index: 2;
+}
+
 .feedback-card {
-  background: rgba(150, 167, 141, 0.35);      
+  background: rgba(150, 167, 141, 0.35);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-radius: 20px;
@@ -28,7 +38,7 @@
 .form-group label {
   text-align: right;
   font-weight: 500;
-  color: #ffffff;              
+  color: #ffffff;
   transition: color 0.3s ease;
 }
 
@@ -48,26 +58,6 @@
   line-height: 1.6;
 }
 
-.feedback-form textarea:hover {
-  border-color: #cbd5e0;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.feedback-form textarea:focus {
-  border-color: #667eea;
-  background: rgba(255, 255, 255, 1);
-  box-shadow:
-    0 0 0 3px rgba(102, 126, 234, 0.12),
-    0 4px 12px rgba(0, 0, 0, 0.16);
-  transform: translateY(-1px);
-}
-
-.feedback-form textarea::placeholder {
-  color: #a0aec0;
-  opacity: 1;
-}
-
 .feedback-form input[type="file"] {
   width: 100%;
   padding: 8px 12px;
@@ -78,20 +68,6 @@
   color: #4a5568;
   transition: all 0.3s ease;
   cursor: pointer;
-}
-
-.feedback-form input[type="file"]:hover {
-  border-color: #cbd5e0;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-}
-
-.feedback-form input[type="file"]:focus {
-  border-color: #667eea;
-  background: rgba(255, 255, 255, 1);
-  box-shadow:
-    0 0 0 2px rgba(102, 126, 234, 0.12),
-    0 3px 10px rgba(0, 0, 0, 0.14);
 }
 
 .feedback-submit {
@@ -107,13 +83,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
-
 @media (max-width: 800px) {
-  .feedback-card {
-    max-width: 100%;
-  }
+  .feedback-card { max-width: 100%; }
 }
