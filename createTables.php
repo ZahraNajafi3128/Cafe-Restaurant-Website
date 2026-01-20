@@ -97,23 +97,34 @@ if($s3)
 else
     echo "error";
 
-
-
-
-$s2="CREATE TABLE contact_messages(
+  $s2="CREATE TABLE resumes(
   id INT AUTO_INCREMENT PRIMARY KEY,
-  user_id INT NOT NULL,
-  subject VARCHAR(150) NULL,
-  message TEXT NOT NULL,
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-  FOREIGN KEY (user_id) REFERENCES users(id)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+  firstname VARCHAR(100) NOT NULL,
+  lastname VARCHAR(120) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  resume_path VARCHAR(255) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
 $s3=mysqli_query($s1,$s2);
 if($s3)
     echo "create table";
 else
     echo "error";
+
+
+
+$s2="CREATE TABLE contact_messages(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  fullname VARCHAR(190) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  email VARCHAR(190) NOT NULL,
+  messages TEXT NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+
+$s3=mysqli_query($s1,$s2);
+if($s3)
+    echo "create table";
+else
+    echo "error";
+
 
 mysqli_close($s1);
 ?>

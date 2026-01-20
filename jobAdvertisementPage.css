@@ -11,7 +11,7 @@ body {
   direction: rtl;
   font-family: 'Tahoma', 'Vazirmatn', sans-serif;
 
-  background-image: url('image2.png');  
+  background-image: url('image2.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -30,7 +30,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(30, 22, 18, 0.5); 
+  background-color: rgba(30, 22, 18, 0.5);
   z-index: 0;
 }
 
@@ -207,13 +207,8 @@ body::before {
     margin: 28px auto 40px;
   }
 
-  .job-box {
-    padding: 18px 16px;
-  }
-
-  .form-box {
-    padding: 18px 16px;
-  }
+  .job-box { padding: 18px 16px; }
+  .form-box { padding: 18px 16px; }
 
   .form-grid {
     grid-template-columns: 1fr;
@@ -228,12 +223,6 @@ body::before {
     grid-column: 1 / 2;
     grid-row: auto;
   }
-
-  .right-top   { order: 1; }
-  .field-phone { order: 2; }
-  .upload-label { order: 3; }
-  .upload-box  { order: 4; }
-  .submit-btn  { order: 5; }
 
   .upload-label {
     display: block;

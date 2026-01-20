@@ -1,4 +1,3 @@
-/* جلوگیری از اینکه لایه شیشه‌ای جلوی کلیک را بگیرد */
 .glass-overlay{
   pointer-events: none;
 }

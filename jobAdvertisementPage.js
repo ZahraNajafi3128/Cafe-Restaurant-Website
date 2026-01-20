@@ -15,9 +15,11 @@ if (uploadBox && resumeInput) {
   });
 }
 
-if (form) {
+if (form && resumeInput) {
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('فرم با موفقیت ارسال شد.');
+    if (!resumeInput.files || resumeInput.files.length === 0) {
+      e.preventDefault();
+      alert('لطفاً رزومه را آپلود کنید.');
+    }
   });
 }
