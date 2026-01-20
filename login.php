@@ -23,7 +23,6 @@ $s3 = mysqli_query($s1,$s2);
 if(mysqli_num_rows($s3) == 1){
     $user = mysqli_fetch_assoc($s3);
 
-    // اختیاری: برای اینکه بعداً تو پنل بفهمی کی لاگین کرده
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
 

@@ -14,7 +14,7 @@ if (menuToggle && sideMenu && backdrop) {
   });
 }
 
-const avatarInput   = document.getElementById('avatar-input');
+const avatarInput = document.getElementById('avatar-input');
 const avatarPreview = document.getElementById('avatarPreview');
 
 if (avatarInput && avatarPreview) {
@@ -31,27 +31,17 @@ if (avatarInput && avatarPreview) {
 }
 
 const reserveForm = document.getElementById('reserveForm');
-const eventTypeEl = document.getElementById('eventType');
-const guestsEl    = document.getElementById('guests');
-const dateEl      = document.getElementById('date');
-const timeEl      = document.getElementById('time');
 
 if (reserveForm) {
   reserveForm.addEventListener('submit', (e) => {
-    e.preventDefault(); 
+    const eventTitle = document.getElementById('eventType').value.trim();
+    const guests     = document.getElementById('guests').value.trim();
+    const date       = document.getElementById('date').value;
+    const time       = document.getElementById('time').value;
 
-    const eventType = eventTypeEl.value.trim();
-    const guests    = guestsEl.value.trim();
-    const date      = dateEl.value;
-    const time      = timeEl.value;
-
-    if (!eventType || !guests || !date || !time) {
-      alert('لطفاً همه فیلدهای الزامی (نوع مراسم، تعداد میهمانان، تاریخ و ساعت) را تکمیل کنید.');
-      return;
+    if (!eventTitle || !guests || !date || !time) {
+      e.preventDefault(); 
+      alert('لطفاً همه فیلدهای الزامی را تکمیل کنید.');
     }
-
-    alert('درخواست رزرو شما ثبت شد. به‌زودی برای هماهنگی با شما تماس خواهیم گرفت.');
-
-    reserveForm.reset();
   });
 }

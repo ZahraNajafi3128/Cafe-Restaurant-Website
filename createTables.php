@@ -71,12 +71,9 @@ $s2="CREATE TABLE reservations(
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
   event_title VARCHAR(150) NULL,
-  reservation_datetime DATETIME NOT NULL,
   guests_count INT NOT NULL,
+  reservation_datetime DATETIME NOT NULL,
   notes TEXT NULL,
-  status ENUM('pending','confirmed','cancelled') NOT NULL DEFAULT 'pending',
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
   FOREIGN KEY (user_id) REFERENCES users(id)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
 $s3=mysqli_query($s1,$s2);
