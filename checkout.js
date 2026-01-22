@@ -3,15 +3,12 @@ const VAT_RATE = 0.025;
 const SHIPPING_COST = 100000;
 
 function loadCart() {
-  try {
-    return JSON.parse(localStorage.getItem(CART_KEY)) || {};
-  } catch {
-    return {};
-  }
+  try { return JSON.parse(localStorage.getItem(CART_KEY)) || {}; }
+  catch { return {}; }
 }
 
-function formatCurrency(value) {
-  return (Number(value) || 0).toLocaleString('fa-IR') + ' تومان';
+function clearCartHard() {
+  localStorage.removeItem(CART_KEY);
 }
 
 function calcSubtotal(cart) {
@@ -26,18 +23,17 @@ function calcSubtotal(cart) {
 
 function renderSummary() {
   const cart = loadCart();
-
   const summaryItemsEl = document.getElementById('summaryItems');
   const shippingEl = document.getElementById('summaryShipping');
   const vatEl = document.getElementById('summaryVat');
   const totalEl = document.getElementById('summaryTotal');
   const payBtn = document.getElementById('payBtn');
-
   if (!summaryItemsEl || !shippingEl || !vatEl || !totalEl || !payBtn) return;
 
-  summaryItemsEl.innerHTML = "";
-
+  summaryItemsEl.innerHTML = '';
   const subtotal = calcSubtotal(cart);
+
+  const formatCurrency = (v) => (Number(v) || 0).toLocaleString('fa-IR') + ' تومان';
 
   if (subtotal <= 0) {
     summaryItemsEl.innerHTML = `<p class="summary-empty">سبد خرید خالی است.</p>`;
@@ -53,14 +49,9 @@ function renderSummary() {
     const qty = Number(data?.qty) || 0;
     if (qty <= 0) continue;
 
-    const lineTotal = price * qty;
-
     const row = document.createElement('div');
     row.className = 'order-item';
-    row.innerHTML = `
-      <span>${name} × ${qty}</span>
-      <span>${formatCurrency(lineTotal)}</span>
-    `;
+    row.innerHTML = `<span>${name} × ${qty}</span><span>${formatCurrency(price * qty)}</span>`;
     summaryItemsEl.appendChild(row);
   }
 
@@ -74,17 +65,12 @@ function renderSummary() {
   payBtn.disabled = false;
 }
 
-function clearCartHard() {
-  localStorage.removeItem(CART_KEY);
-}
-
 window.addEventListener('load', () => {
   renderSummary();
 
   const form = document.getElementById('checkoutForm');
   const err = document.getElementById('checkoutError');
   const payBtn = document.getElementById('payBtn');
-
   if (!form || !err || !payBtn) return;
 
   form.addEventListener('submit', async (e) => {
@@ -95,35 +81,60 @@ window.addEventListener('load', () => {
 
     if (subtotal <= 0) {
       err.hidden = false;
+      err.textContent = 'سبد خرید خالی است.';
       renderSummary();
       return;
     }
 
     if (!form.checkValidity()) {
       err.hidden = false;
+      err.textContent = 'لطفاً فیلدهای ضروری را کامل و درست وارد کنید.';
       return;
     }
 
     err.hidden = true;
     payBtn.disabled = true;
 
+    const payload = {
+      customer_name: document.getElementById('name').value.trim(),
+      customer_phone: document.getElementById('phone').value.trim(),
+      shipping_address: document.getElementById('address').value.trim(),
+      cart
+    };
+
     try {
+      const res = await fetch('checkout.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify(payload)
+      });
 
+      const raw = await res.text();
+      console.log('checkout.php raw:', raw);
 
-      alert('پرداخت با موفقیت ثبت شد.');
+      let data = null;
+      try { data = JSON.parse(raw); } catch {}
+
+      if (!res.ok) {
+        throw new Error((data && data.message) ? data.message : (raw || ('HTTP ' + res.status)));
+      }
+      if (!data || !data.ok) {
+        throw new Error((data && data.message) ? data.message : 'Unknown server error');
+      }
+
+      alert('سفارش ثبت شد. کد سفارش: ' + data.order_id);
 
       clearCartHard();
       renderSummary();
-
       window.location.href = 'menuPage.html';
     } catch (e2) {
       payBtn.disabled = false;
       err.hidden = false;
-      err.textContent = 'خطا در ثبت سفارش. دوباره تلاش کنید.';
+      err.textContent = e2.message || 'خطا در ثبت سفارش.';
+      console.error(e2);
     }
   });
 });
 
-window.addEventListener('pageshow', () => {
-  renderSummary();
-});
+window.addEventListener('pageshow', () => renderSummary());

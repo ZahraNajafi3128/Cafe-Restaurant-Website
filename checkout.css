@@ -229,7 +229,6 @@ body::before {
   color: #fff;
 }
 
-/* ====== NEW small additions ====== */
 #summaryItems:empty {
   margin-bottom: 10px;
 }

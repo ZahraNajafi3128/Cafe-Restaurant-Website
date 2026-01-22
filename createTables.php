@@ -21,49 +21,44 @@ else
     echo "error";
 
 
-$s2="CREATE TABLE orders(
+$s2 = "CREATE TABLE orders(
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
-
-  customer_name VARCHAR(120) NOT NULL,
+  customer_name VARCHAR(100) NOT NULL,
   customer_phone VARCHAR(20) NOT NULL,
-  customer_email VARCHAR(190) NULL,
-  delivery_address TEXT NOT NULL,
+  shipping_address TEXT NOT NULL,
+  total_amount INT UNSIGNED NOT NULL,
+  status VARCHAR(20) NOT NULL DEFAULT 'registered',
+  INDEX idx_orders_user_id (user_id),
+  CONSTRAINT fk_orders_user
+    FOREIGN KEY (user_id) REFERENCES users(id)
+    ON UPDATE CASCADE
+    ON DELETE RESTRICT) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
-  subtotal INT NOT NULL,
-  vat INT NOT NULL,
-  shipping INT NOT NULL,
-  grand_total INT NOT NULL,
-
-  payment_status ENUM('unpaid','paid','failed') NOT NULL DEFAULT 'unpaid',
-  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-  FOREIGN KEY (user_id) REFERENCES users(id)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
-
-$s3=mysqli_query($s1,$s2);
+$s3 = mysqli_query($s1, $s2);
 if($s3)
-    echo "create table";
+    echo "create orders table<br>";
 else
-    echo "error";
+    echo "orders error: " . mysqli_error($s1) . "<br>";
 
 
-
-$s2="CREATE TABLE order_items(
+$s2 = "CREATE TABLE order_items(
   id INT AUTO_INCREMENT PRIMARY KEY,
   order_id INT NOT NULL,
+  item_name VARCHAR(255) NOT NULL,
+  unit_price INT UNSIGNED NOT NULL,
+  quantity INT UNSIGNED NOT NULL,
+  INDEX idx_order_items_order_id (order_id),
+  CONSTRAINT fk_order_items_order
+    FOREIGN KEY (order_id) REFERENCES orders(id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
-  item_name VARCHAR(150) NOT NULL,
-  unit_price INT NOT NULL,
-  qty INT NOT NULL,
-  line_total INT NOT NULL,
-
-  FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
-
-$s3=mysqli_query($s1,$s2);
+$s3 = mysqli_query($s1, $s2);
 if($s3)
-    echo "create table";
+    echo "create order_items table<br>";
 else
-    echo "error";
+    echo "order_items error: " . mysqli_error($s1) . "<br>";
 
 
 
@@ -96,6 +91,10 @@ if($s3)
     echo "create table";
 else
     echo "error";
+
+
+
+
 
   $s2="CREATE TABLE resumes(
   id INT AUTO_INCREMENT PRIMARY KEY,

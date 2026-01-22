@@ -1,0 +1,88 @@
+[2026-01-22 11:56:34] === checkout.php called === | Array
+(
+    [method] => POST
+    [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
+)
+
+[2026-01-22 11:56:34] Session | Array
+(
+    [user_id] => 1
+    [username] => mel
+)
+
+[2026-01-22 11:56:34] ERROR | Array
+(
+    [message] => Failed opening required 'C:\wamp64\www\preWeb\Cafe-Restaurant-Website/db.php' (include_path='.;C:\php\pear')
+    [trace] => #0 {main}
+)
+
+[2026-01-22 12:24:05] === checkout.php called === | Array
+(
+    [method] => POST
+    [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
+)
+
+[2026-01-22 12:24:05] Session | Array
+(
+    [user_id] => 1
+    [username] => mel
+)
+
+[2026-01-22 12:24:06] ERROR | Array
+(
+    [message] => Failed opening required 'C:\wamp64\www\preWeb\Cafe-Restaurant-Website/db.php' (include_path='.;C:\php\pear')
+    [trace] => #0 {main}
+)
+
+[2026-01-22 12:44:50] ERROR | Array
+(
+    [msg] => Failed opening required 'C:\wamp64\www\preWeb\Cafe-Restaurant-Website/db.php' (include_path='.;C:\php\pear')
+    [trace] => #0 {main}
+)
+
+[2026-01-22 12:46:48] ERROR | Array
+(
+    [msg] => Failed opening required 'C:\wamp64\www\preWeb\Cafe-Restaurant-Website/db.php' (include_path='.;C:\php\pear')
+    [trace] => #0 {main}
+)
+
+[2026-01-22 13:05:06] Called | Array
+(
+    [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
+    [raw_len] => 166
+    [json_ok] => 1
+    [session] => Array
+        (
+            [user_id] => 1
+            [username] => mel
+        )
+
+)
+
+[2026-01-22 13:05:07] Saved | Array
+(
+    [order_id] => 1
+    [items] => 1
+    [total] => 647350
+)
+
+[2026-01-22 13:07:58] Called | Array
+(
+    [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
+    [raw_len] => 324
+    [json_ok] => 1
+    [session] => Array
+        (
+            [user_id] => 1
+            [username] => mel
+        )
+
+)
+
+[2026-01-22 13:07:58] Saved | Array
+(
+    [order_id] => 2
+    [items] => 4
+    [total] => 910775
+)
+
