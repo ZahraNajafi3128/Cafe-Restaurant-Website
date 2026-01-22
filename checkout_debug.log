@@ -1,88 +1,60 @@
-[2026-01-22 11:56:34] === checkout.php called === | Array
-(
-    [method] => POST
-    [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
-)
-
-[2026-01-22 11:56:34] Session | Array
-(
-    [user_id] => 1
-    [username] => mel
-)
-
-[2026-01-22 11:56:34] ERROR | Array
-(
-    [message] => Failed opening required 'C:\wamp64\www\preWeb\Cafe-Restaurant-Website/db.php' (include_path='.;C:\php\pear')
-    [trace] => #0 {main}
-)
-
-[2026-01-22 12:24:05] === checkout.php called === | Array
-(
-    [method] => POST
-    [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
-)
-
-[2026-01-22 12:24:05] Session | Array
-(
-    [user_id] => 1
-    [username] => mel
-)
-
-[2026-01-22 12:24:06] ERROR | Array
-(
-    [message] => Failed opening required 'C:\wamp64\www\preWeb\Cafe-Restaurant-Website/db.php' (include_path='.;C:\php\pear')
-    [trace] => #0 {main}
-)
-
-[2026-01-22 12:44:50] ERROR | Array
-(
-    [msg] => Failed opening required 'C:\wamp64\www\preWeb\Cafe-Restaurant-Website/db.php' (include_path='.;C:\php\pear')
-    [trace] => #0 {main}
-)
-
-[2026-01-22 12:46:48] ERROR | Array
-(
-    [msg] => Failed opening required 'C:\wamp64\www\preWeb\Cafe-Restaurant-Website/db.php' (include_path='.;C:\php\pear')
-    [trace] => #0 {main}
-)
-
-[2026-01-22 13:05:06] Called | Array
+[2026-01-22 15:56:02] Called | Array
 (
     [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
-    [raw_len] => 166
+    [raw_len] => 295
     [json_ok] => 1
     [session] => Array
         (
             [user_id] => 1
-            [username] => mel
+            [username] => sonia
         )
 
 )
 
-[2026-01-22 13:05:07] Saved | Array
+[2026-01-22 15:56:02] Saved | Array
 (
     [order_id] => 1
-    [items] => 1
-    [total] => 647350
+    [items] => 3
+    [total] => 532550
 )
 
-[2026-01-22 13:07:58] Called | Array
+[2026-01-22 16:16:47] Called | Array
 (
     [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
-    [raw_len] => 324
+    [raw_len] => 230
     [json_ok] => 1
     [session] => Array
         (
-            [user_id] => 1
-            [username] => mel
+            [user_id] => 2
+            [username] => zahra
         )
 
 )
 
-[2026-01-22 13:07:58] Saved | Array
+[2026-01-22 16:16:47] Saved | Array
 (
     [order_id] => 2
-    [items] => 4
-    [total] => 910775
+    [items] => 2
+    [total] => 797000
+)
+
+[2026-01-22 16:48:12] Called | Array
+(
+    [uri] => /preWeb/Cafe-Restaurant-Website/checkout.php
+    [raw_len] => 203
+    [json_ok] => 1
+    [session] => Array
+        (
+            [user_id] => 3
+            [username] => amirAli
+        )
+
+)
+
+[2026-01-22 16:48:12] Saved | Array
+(
+    [order_id] => 3
+    [items] => 1
+    [total] => 1232625
 )
 

@@ -2,22 +2,10 @@
 header('Content-Type: application/json; charset=utf-8');
 session_start();
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/php-error.log');
-
 function respond(int $code, array $payload) {
     http_response_code($code);
     echo json_encode($payload, JSON_UNESCAPED_UNICODE);
     exit;
-}
-function dlog($msg, $data=null) {
-    $line = "[".date('Y-m-d H:i:s')."] ".$msg;
-    if ($data !== null) $line .= " | " . print_r($data, true);
-    $line .= PHP_EOL;
-    file_put_contents(__DIR__ . '/checkout_debug.log', $line, FILE_APPEND);
 }
 
 try {
@@ -29,25 +17,20 @@ try {
 
     require_once __DIR__ . "/db.php";
     if (!isset($s1) || !$s1) {
-        respond(500, ['ok'=>false,'message'=>'DB connection ($s1) not available']);
+        respond(500, ['ok'=>false,'message'=>'DB connection not available']);
     }
     $s1->set_charset("utf8mb4");
 
+    $user_id = $_SESSION['user_id'] ?? null;
+    if (!$user_id) {
+        respond(401, ['ok'=>false,'message'=>'User not logged in']);
+    }
+
     $raw = file_get_contents("php://input");
     $data = json_decode($raw, true);
-
-    dlog("Called", [
-        'uri' => $_SERVER['REQUEST_URI'] ?? null,
-        'raw_len' => strlen($raw),
-        'json_ok' => is_array($data),
-        'session' => $_SESSION,
-    ]);
-
     if (!is_array($data)) {
         respond(400, ['ok'=>false,'message'=>'Invalid JSON']);
     }
-
-    $user_id = 1;
 
     $customer_name = trim($data['customer_name'] ?? '');
     $customer_phone = trim($data['customer_phone'] ?? '');
@@ -103,14 +86,11 @@ try {
 
     $s1->commit();
 
-    dlog("Saved", ['order_id'=>$order_id, 'items'=>count($items), 'total'=>$total_amount]);
-
     respond(200, ['ok'=>true, 'order_id'=>$order_id]);
 
 } catch (Throwable $e) {
     if (isset($s1) && $s1) {
         try { $s1->rollback(); } catch (Throwable $e2) {}
     }
-    dlog("ERROR", ['msg'=>$e->getMessage(), 'trace'=>$e->getTraceAsString()]);
     respond(500, ['ok'=>false, 'message'=>$e->getMessage()]);
 }
